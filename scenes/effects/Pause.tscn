@@ -1,0 +1,15 @@
+[gd_scene format=2]
+
+[node name="Pause" type="Node2D"]
+position = Vector2( 0, 27.088 )
+scale = Vector2( 200, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_right = 320.0
+margin_bottom = 256.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="HBoxContainer"]
+color = Color( 0.709804, 0.219608, 0.219608, 1 )
