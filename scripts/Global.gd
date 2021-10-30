@@ -70,25 +70,5 @@ var TAIL_DIRECTION = [
 var playerState = PLAYER_STATE.IDLE
 var gameState = GAME_STATE.IDLE
 
-var items = [ null, null, null, null, null, null, null, null, null, null ]
 
 
-var data = {
-	"lv":1,
-	"hp":0,
-	"mp":0,
-	"room": {
-		"current": ROOMS.NONE,
-		"x":0,
-		"y":0
-	},
-	"tail1": {
-		"type": TAIL_TYPE.NONE
-	},
-	"tail2": {
-		"type": TAIL_TYPE.NONE
-	},
-	"tail3": {
-		"type": TAIL_TYPE.NONE
-	}
-}

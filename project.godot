@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://scripts/Global.gd"
+Data="*res://scripts/Data.gd"
 
 [display]
 
@@ -54,6 +55,24 @@ JUMP={
  ]
 }
 
+[layer_names]
+
+2d_render/layer_1="player"
+2d_physics/layer_1="player"
+2d_render/layer_2="platform"
+2d_physics/layer_2="platform"
+2d_render/layer_3="fallzone"
+2d_physics/layer_3="fallzone"
+2d_render/layer_4="item"
+2d_physics/layer_4="item"
+2d_render/layer_5="enemy"
+2d_physics/layer_5="enemy"
+2d_render/layer_6="enemyProjectile"
+2d_physics/layer_6="enemyProjectile"
+2d_render/layer_7="playerProjectile"
+2d_physics/layer_7="playerProjectile"
+2d_physics/layer_8="hurtbox"
+
 [physics]
 
 common/enable_pause_aware_picking=true
@@ -63,4 +82,5 @@ common/enable_pause_aware_picking=true
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.172549, 0.203922, 0.2, 1 )
 environment/default_environment="res://default_env.tres"

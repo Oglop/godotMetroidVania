@@ -60,9 +60,12 @@ __meta__ = {
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
 position = Vector2( 0.256935, -3.25847 )
+collision_layer = 3
 script = ExtResource( 2 )
 
-[node name="PlayerHitBox" type="CollisionShape2D" parent="PlayerBody"]
+[node name="PlayerHitBox" type="CollisionShape2D" parent="PlayerBody" groups=[
+"player",
+]]
 position = Vector2( 6.88109, 12.4641 )
 shape = SubResource( 1 )
 
@@ -71,7 +74,9 @@ position = Vector2( 6.63339, 3.25847 )
 frames = SubResource( 8 )
 animation = "idle"
 
-[node name="PlayerFloorDetector" type="RayCast2D" parent="PlayerBody"]
+[node name="PlayerFloorDetector" type="RayCast2D" parent="PlayerBody" groups=[
+"player",
+]]
 position = Vector2( 6.88109, 19.2585 )
 enabled = true
 cast_to = Vector2( 0, 8 )
