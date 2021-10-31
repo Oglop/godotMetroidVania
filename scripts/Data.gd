@@ -63,4 +63,3 @@ var data = {
 	}
 }
 
-var items = [ null, null, null, null, null, null, null, null, null, null ]

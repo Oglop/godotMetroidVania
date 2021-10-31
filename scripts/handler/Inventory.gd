@@ -292,6 +292,11 @@ func setEquipedItem():
 		Data.data.shield.tier2.equiped = false
 		Data.data.shield.tier3.equiped = true
 		
+		
+func togglePause():
+	var pauseState = not get_tree().paused
+	get_tree().paused = pauseState
+	self.visible = pauseState
 
 func checkForInput():
 	if Input.is_action_just_pressed("UP"):
@@ -304,6 +309,8 @@ func checkForInput():
 		traverseGrid(Global.DIRECTIONS.LEFT)
 	if Input.is_action_just_pressed("ACTION_MAIN"):
 		setEquipedItem()
+	if Input.is_action_just_pressed("PAUSE"):
+		togglePause()
 				
 func _physics_process(delta):
 	checkForInput()

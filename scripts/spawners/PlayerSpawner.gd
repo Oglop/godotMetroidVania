@@ -3,13 +3,22 @@ extends Node2D
 var Player = preload("res://scenes/player/player.tscn")
 var Tail = preload("res://scenes/player/Tail.tscn")
 
+var startX = 0
+var startY = 0
+
+
+
+func setStartPosition():
+	if Global.CURRENT_ROOM == Global.ROOMS.PLAINS_START && Global.PREVIOUS_ROOM == Global.ROOMS.NONE:
+		startX = 500
+		startY = -0
+
+
 func _ready():
 	
-	
-	
-	var parent = self.get_parent()
+	setStartPosition()
 	var player = Player.instance()
-	player.get_node("PlayerBody").setPosition(100, 80)
+	player.get_node("PlayerBody").setPosition(startX, startY)
 	var tail1 = Tail.instance()
 	var tail2 = Tail.instance()
 	var tail3 = Tail.instance()

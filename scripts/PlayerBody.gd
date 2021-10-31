@@ -3,18 +3,14 @@ extends KinematicBody2D
 onready var floorChecker = get_node("PlayerFloorDetector")
 var velocity = Vector2(0,0)
 
-var startPositionX = 0
-var startPositionY = 0
-
-
 func setPosition(x, y):
-	startPositionX = x
-	startPositionY = y
+	self.position.x = x
+	self.position.y = y
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for n in range(Global.TAIL_SIZE,-1,-1):
-		Global.X_POSITIONS[n] = startPositionX
-		Global.Y_POSITIONS[n] = startPositionY
+		Global.X_POSITIONS[n] = self.position.x
+		Global.Y_POSITIONS[n] = self.position.y
 		
 func setAnimationFromState():
 	if Global.playerState == Global.PLAYER_STATE.WALKING:
