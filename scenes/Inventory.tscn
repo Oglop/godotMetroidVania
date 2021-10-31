@@ -1,24 +1,56 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scripts/handler/Inventory.gd" type="Script" id=1]
 [ext_resource path="res://images/menu.png" type="Texture" id=2]
 [ext_resource path="res://fonts/16bfZX.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=5]
-extra_spacing_top = 3
+[sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=6]
-extra_spacing_top = 3
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=7]
-extra_spacing_top = 3
-font_data = ExtResource( 3 )
-
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 16 )
+region = Rect2( 112, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "notFound",
+"speed": 5.0
+} ]
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
@@ -26,51 +58,241 @@ region = Rect2( 64, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=12]
 animations = [ {
-"frames": [ SubResource( 8 ) ],
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "found",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "equiped",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "notFound",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 0, 16, 16 )
+region = Rect2( 96, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 16 )
+region = Rect2( 80, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
 "loop": true,
 "name": "found",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": true,
-"name": "equiped",
+"name": "notFound",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=17]
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 18 ) ],
+"loop": true,
+"name": "selected",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ) ],
+"frames": [ SubResource( 19 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 20 ) ],
+"loop": true,
+"name": "notFound",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 22 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 24 ) ],
+"loop": true,
+"name": "notFound",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=29]
+animations = [ {
+"frames": [ SubResource( 26 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 27 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 28 ) ],
+"loop": true,
+"name": "notFound",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=30]
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 16, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 31 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 32 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 33 ) ],
+"loop": true,
+"name": "notFound",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ SubResource( 35 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 36 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 37 ) ],
+"loop": true,
+"name": "notFound",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 80, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=42]
+animations = [ {
+"frames": [ SubResource( 39 ) ],
+"loop": true,
+"name": "selected",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 40 ) ],
+"loop": true,
+"name": "found",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 41 ) ],
 "loop": true,
 "name": "notFound",
 "speed": 5.0
@@ -87,7 +309,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 margin_left = 20.0
 margin_top = 20.0
 margin_right = 332.0
@@ -96,80 +320,168 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+[node name="VBItems" type="VBoxContainer" parent="MarginContainer"]
 margin_right = 312.0
-margin_bottom = 50.0
+margin_bottom = 216.0
+
+[node name="lblTitle" type="Label" parent="MarginContainer/VBItems"]
+margin_right = 312.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 1 )
+text = "Inventory"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxConText" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBItems"]
+margin_top = 15.0
 margin_right = 312.0
-margin_bottom = 50.0
+margin_bottom = 216.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/vseparation = 20
+custom_constants/hseparation = 20
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="VBoxConText" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxConText"]
+[node name="lblSword" type="Label" parent="MarginContainer/VBItems/GridContainer"]
 margin_right = 43.0
-margin_bottom = 50.0
-
-[node name="LabelSword" type="Label" parent="VBoxContainer/MarginContainer/HBoxConText/VBoxConText"]
-margin_right = 43.0
-margin_bottom = 14.0
-custom_fonts/font = SubResource( 5 )
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 2 )
 text = "Sword: "
 
-[node name="LabelArmor" type="Label" parent="VBoxContainer/MarginContainer/HBoxConText/VBoxConText"]
-margin_top = 18.0
+[node name="CCSW1" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 63.0
+margin_right = 63.0
+margin_bottom = 11.0
+
+[node name="swordTeir1Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSW1"]
+frames = SubResource( 4 )
+
+[node name="swordTeir1Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSW1"]
+frames = SubResource( 8 )
+animation = "found"
+
+[node name="CCSW2" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 83.0
+margin_right = 83.0
+margin_bottom = 11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="swordTeir2Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSW2"]
+frames = SubResource( 4 )
+
+[node name="swordTier2Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSW2"]
+frames = SubResource( 12 )
+animation = "notFound"
+
+[node name="CCSW3" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 103.0
+margin_right = 103.0
+margin_bottom = 11.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="swordTeir3Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSW3"]
+frames = SubResource( 4 )
+
+[node name="swordTier3Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSW3"]
+frames = SubResource( 16 )
+animation = "notFound"
+
+[node name="lblArmor" type="Label" parent="MarginContainer/VBItems/GridContainer"]
+margin_top = 31.0
 margin_right = 43.0
-margin_bottom = 32.0
-custom_fonts/font = SubResource( 6 )
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 17 )
 text = "Armor: "
 
-[node name="LabelShield" type="Label" parent="VBoxContainer/MarginContainer/HBoxConText/VBoxConText"]
-margin_top = 36.0
+[node name="CCARM1" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 63.0
+margin_top = 31.0
+margin_right = 63.0
+margin_bottom = 42.0
+
+[node name="armorTeir1Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCARM1"]
+frames = SubResource( 4 )
+
+[node name="armorTier1Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCARM1"]
+frames = SubResource( 21 )
+animation = "found"
+
+[node name="CCARM2" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 83.0
+margin_top = 31.0
+margin_right = 83.0
+margin_bottom = 42.0
+
+[node name="armorTeir2Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCARM2"]
+frames = SubResource( 4 )
+
+[node name="armorTier2Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCARM2"]
+frames = SubResource( 25 )
+animation = "selected"
+
+[node name="CCARM3" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 103.0
+margin_top = 31.0
+margin_right = 103.0
+margin_bottom = 42.0
+
+[node name="armorTeir3Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCARM3"]
+frames = SubResource( 4 )
+
+[node name="armorTier3Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCARM3"]
+frames = SubResource( 29 )
+animation = "selected"
+
+[node name="lblShield" type="Label" parent="MarginContainer/VBItems/GridContainer"]
+margin_top = 62.0
 margin_right = 43.0
-margin_bottom = 50.0
-custom_fonts/font = SubResource( 7 )
+margin_bottom = 73.0
+custom_fonts/font = SubResource( 30 )
 text = "Shield: "
 
-[node name="HBoxConImage" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxConText"]
-margin_left = 47.0
+[node name="CCSHI1" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 63.0
+margin_top = 62.0
 margin_right = 63.0
-margin_bottom = 50.0
+margin_bottom = 73.0
 
-[node name="VBoxConSword" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage"]
-margin_right = 8.0
-margin_bottom = 50.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage/VBoxConSword"]
-margin_right = 8.0
-
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage/VBoxConSword/HBoxContainer"]
-
-[node name="swordTier2Sprite" type="AnimatedSprite" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage/VBoxConSword/HBoxContainer/CenterContainer"]
-frames = SubResource( 11 )
-animation = "notFound"
-offset = Vector2( 8, 8 )
-
-[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage/VBoxConSword/HBoxContainer"]
-margin_left = 4.0
-margin_right = 4.0
-
-[node name="swordTeir1Sprite" type="AnimatedSprite" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage/VBoxConSword/HBoxContainer/CenterContainer2"]
-position = Vector2( -4, 0 )
+[node name="shieldTeir1Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSHI1"]
 frames = SubResource( 4 )
-animation = "notFound"
-offset = Vector2( 8, 8 )
 
-[node name="CenterContainer3" type="CenterContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage/VBoxConSword/HBoxContainer"]
-margin_left = 8.0
-margin_right = 8.0
+[node name="shieldTier1Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSHI1"]
+frames = SubResource( 34 )
+animation = "selected"
 
-[node name="VBoxConArmor" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage"]
-margin_left = 12.0
-margin_right = 12.0
-margin_bottom = 50.0
+[node name="CCSHI2" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 83.0
+margin_top = 62.0
+margin_right = 83.0
+margin_bottom = 73.0
 
-[node name="VBoxConShield" type="VBoxContainer" parent="VBoxContainer/MarginContainer/HBoxConText/HBoxConImage"]
-margin_left = 16.0
-margin_right = 16.0
-margin_bottom = 50.0
+[node name="shieldTeir2Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSHI2"]
+frames = SubResource( 4 )
+
+[node name="shieldTier2Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSHI2"]
+frames = SubResource( 38 )
+animation = "selected"
+
+[node name="CCSHI3" type="CenterContainer" parent="MarginContainer/VBItems/GridContainer"]
+margin_left = 103.0
+margin_top = 62.0
+margin_right = 103.0
+margin_bottom = 73.0
+
+[node name="shieldTeir3Equiped" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSHI3"]
+frames = SubResource( 4 )
+
+[node name="shieldTier3Sprite" type="AnimatedSprite" parent="MarginContainer/VBItems/GridContainer/CCSHI3"]
+frames = SubResource( 42 )
+animation = "selected"

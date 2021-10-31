@@ -32,6 +32,34 @@ var data = {
 			"found": false,
 			"equiped": false
 		}
+	}, 
+	"armor": {
+		"tier1": {
+			"found": true,
+			"equiped": true
+		},
+		"tier2": {
+			"found": false,
+			"equiped": false
+		},
+		"tier3": {
+			"found": false,
+			"equiped": false
+		}
+	},
+	"shield": {
+		"tier1": {
+			"found": true,
+			"equiped": true
+		},
+		"tier2": {
+			"found": false,
+			"equiped": false
+		},
+		"tier3": {
+			"found": false,
+			"equiped": false
+		}
 	}
 }
 
