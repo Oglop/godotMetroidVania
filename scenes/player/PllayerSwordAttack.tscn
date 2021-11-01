@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://images/actors.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 112, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 128, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 144, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 160, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "tier1",
+"speed": 5.03
+} ]
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 5.2904, 5.09104 )
+
+[node name="PllayerSwordAttack" type="Node2D"]
+
+[node name="AttackSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 5 )
+animation = "tier1"
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Hurt\'Box",
+]]
+
+[node name="AttackHitBox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 6 )

@@ -1,7 +1,12 @@
 extends KinematicBody2D
 
 onready var floorChecker = get_node("PlayerFloorDetector")
+onready var rightDamagePoint = get_node("RightHurtPoint")
+onready var leftDamagePoint = get_node("LeftHurtPoint")
+
 var velocity = Vector2(0,0)
+var speedIncrease = 5;
+
 
 func setPosition(x, y):
 	self.position.x = x
@@ -20,6 +25,24 @@ func setAnimationFromState():
 	else:
 		$PlayerSprite.play("idle")
 	
+	
+# getHoriVelocity(Global.DIRECTIONS.RIGHT)
+# getHoriVelocity(Global.DIRECTIONS.LEFT)
+func getHoriVelocity(direction):
+	var currentSpeed = 0;
+	if direction == Global.DIRECTIONS.RIGHT:
+		if velocity.x + speedIncrease < Global.HORI_SPEED:
+			currentSpeed = velocity.x + speedIncrease
+		else: 
+			currentSpeed = Global.HORI_SPEED
+	if direction == Global.DIRECTIONS.LEFT:
+		if velocity.x - speedIncrease > Global.HORI_SPEED * -1:
+			currentSpeed = velocity.x - speedIncrease
+		else: 
+			currentSpeed = -Global.HORI_SPEED
+	return currentSpeed
+			
+			
 
 func _physics_process(delta):
 	if Input.is_action_pressed("RIGHT"):
@@ -51,7 +74,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("JUMP") && self.is_on_floor():
 		velocity.y = Global.JUMP_STRENGTH
 	
+	#if !Input.is_action_pressed("RIGHT") && Input.is_action_pressed("LEFT"):
+	#	currentSpeed = lerp(currentSpeed, 0, Global.HORI_STOP)
+	
 	velocity = self.move_and_slide(velocity, Vector2.UP)
+	#currentSpeed = lerp(velocity.x, 0, Global.HORI_STOP)
 	velocity.x = lerp(velocity.x, 0, Global.HORI_STOP)
 	
 	setAnimationFromState()
