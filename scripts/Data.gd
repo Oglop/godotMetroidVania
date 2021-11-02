@@ -18,7 +18,7 @@ var data = {
 		"type": Global.TAIL_TYPE.THIEF
 	},
 	"tail3": {
-		"type": Global.TAIL_TYPE.NONE
+		"type": Global.TAIL_TYPE.WIZARD
 	},
 	"weapon": {
 		"tier1": {

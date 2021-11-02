@@ -11,6 +11,7 @@ enum ROOMS {
 }
 enum DIRECTIONS { RIGHT, UP, LEFT, DOWN }
 
+var STORAGE_PATH = "user://data/data.json"
 var HORI_SPEED = 130
 var HORI_STOP = 0.4
 var GRAVITY = 20
