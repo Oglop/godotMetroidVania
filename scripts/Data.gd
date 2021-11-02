@@ -1,5 +1,6 @@
 extends Node
 
+var map = []
 
 var data = {
 	"lv":1,
@@ -11,10 +12,10 @@ var data = {
 		"y":0
 	},
 	"tail1": {
-		"type": Global.TAIL_TYPE.NONE
+		"type": Global.TAIL_TYPE.POOCH
 	},
 	"tail2": {
-		"type": Global.TAIL_TYPE.NONE
+		"type": Global.TAIL_TYPE.THIEF
 	},
 	"tail3": {
 		"type": Global.TAIL_TYPE.NONE

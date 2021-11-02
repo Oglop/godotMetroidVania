@@ -16,15 +16,26 @@ func _ready():
 	for n in range(Global.TAIL_SIZE,-1,-1):
 		Global.X_POSITIONS[n] = self.position.x
 		Global.Y_POSITIONS[n] = self.position.y
+		Global.TAIL_DIRECTION[n] = $PlayerSprite.flip_h
+		Global.TAIL_ANIMATION[n] = Global.playerState
+		
+	createMap()
 		
 func setAnimationFromState():
 	if Global.playerState == Global.PLAYER_STATE.WALKING:
 		$PlayerSprite.play("walk")
 	elif Global.playerState == Global.PLAYER_STATE.AIR:
-		$PlayerSprite.play("jump")
+		$PlayerSprite.play("air")
 	else:
 		$PlayerSprite.play("idle")
 	
+func createMap():
+	if Data.map.size() == 0:
+		for y in range(0, 100):
+			var array = []
+			for x in range(0, 100):
+				array.append(0)
+			Data.map.append(array)
 	
 # getHoriVelocity(Global.DIRECTIONS.RIGHT)
 # getHoriVelocity(Global.DIRECTIONS.LEFT)
@@ -42,7 +53,11 @@ func getHoriVelocity(direction):
 			currentSpeed = -Global.HORI_SPEED
 	return currentSpeed
 			
-			
+
+func checkPositionOnMap():
+	var currentMapX = (self.position.x / Global.SCREEN_SIZE_X) + Global.mapOffestX
+	var currentMapY = (self.position.y / Global.SCREEN_SIZE_Y) + Global.mapOffsetY
+	Data.map[currentMapX][currentMapY] = 1
 
 func _physics_process(delta):
 	if Input.is_action_pressed("RIGHT"):
@@ -65,7 +80,7 @@ func _physics_process(delta):
 				Global.X_POSITIONS[n] = Global.X_POSITIONS[n - 1]
 				Global.Y_POSITIONS[n] = Global.Y_POSITIONS[n - 1] 
 				Global.TAIL_DIRECTION[n] = Global.TAIL_DIRECTION[n - 1]
-				Global.TAIL_ANIMATION[n] = Global.TAIL_DIRECTION[n - 1]
+				Global.TAIL_ANIMATION[n] = Global.TAIL_ANIMATION[n - 1]
 			Global.X_POSITIONS[0] = self.position.x
 			Global.Y_POSITIONS[0] = self.position.y
 			Global.TAIL_ANIMATION[0] = Global.playerState
@@ -82,3 +97,4 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x, 0, Global.HORI_STOP)
 	
 	setAnimationFromState()
+	checkPositionOnMap()

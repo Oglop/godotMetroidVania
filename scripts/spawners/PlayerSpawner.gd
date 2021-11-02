@@ -22,9 +22,9 @@ func _ready():
 	var tail1 = Tail.instance()
 	var tail2 = Tail.instance()
 	var tail3 = Tail.instance()
-	tail1.setPositionInTail(6)
-	tail2.setPositionInTail(12)
-	tail3.setPositionInTail(18)
+	tail1.setPositionInTail(6, 1)
+	tail2.setPositionInTail(12, 2)
+	tail3.setPositionInTail(18, 3)
 	
 	self.add_child(tail3)
 	self.add_child(tail2)
