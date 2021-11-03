@@ -15,7 +15,7 @@ var data = {
 		"type": Global.TAIL_TYPE.POOCH
 	},
 	"tail2": {
-		"type": Global.TAIL_TYPE.THIEF
+		"type": Global.TAIL_TYPE.DWARF
 	},
 	"tail3": {
 		"type": Global.TAIL_TYPE.WIZARD

@@ -37,6 +37,8 @@ func setAnimationFromType():
 			$TailSprite.play("wizardIdle")
 		elif type == Global.TAIL_TYPE.ELF:
 			$TailSprite.play("elfIdle")
+		elif type == Global.TAIL_TYPE.DWARF:
+			$TailSprite.play("dwarfIdle")
 			
 	elif Global.TAIL_ANIMATION[positionInTail] == Global.PLAYER_STATE.WALKING:
 		if type == Global.TAIL_TYPE.POOCH:
@@ -47,6 +49,8 @@ func setAnimationFromType():
 			$TailSprite.play("wizardWalking")
 		elif type == Global.TAIL_TYPE.ELF:
 			$TailSprite.play("elfWalking")
+		elif type == Global.TAIL_TYPE.DWARF:
+			$TailSprite.play("dwarfWalking")
 			
 	elif Global.TAIL_ANIMATION[positionInTail] == Global.PLAYER_STATE.AIR:
 		if type == Global.TAIL_TYPE.POOCH:
@@ -57,6 +61,8 @@ func setAnimationFromType():
 			$TailSprite.play("wizardAir")
 		elif type == Global.TAIL_TYPE.ELF:
 			$TailSprite.play("elfAir")
+		elif type == Global.TAIL_TYPE.DWARF:
+			$TailSprite.play("dwarfAir")
 	
 func _physics_process(delta):
 	if Global.playerState != Global.PLAYER_STATE.IDLE:
