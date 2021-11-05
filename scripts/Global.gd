@@ -1,7 +1,7 @@
 extends Node
 
 enum GAME_STATE { IDLE, AWAIT_INPUT }
-enum PLAYER_STATE { IDLE, AIR, WALKING, FALLING, JUMPING }
+enum PLAYER_STATE { IDLE, AIR, WALKING, ATTACK, HURT }
 enum TAIL_TYPE { NONE, POOCH, WIZARD, ELF, THIEF, CLERIC, DWARF }
 enum ROOMS {
 	NONE
@@ -77,6 +77,7 @@ var TAIL_DIRECTION = [
 	false
 ]
 
+var chargeCounter = 0.0
 var playerState = PLAYER_STATE.IDLE
 var gameState = GAME_STATE.IDLE
 var mapOffestX = 0

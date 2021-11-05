@@ -20,6 +20,18 @@ var data = {
 	"tail3": {
 		"type": Global.TAIL_TYPE.WIZARD
 	},
+	"inventory": {
+		"lockPicks": {
+			"found": false
+		},
+		"bomb": {
+			"found": false
+		},
+		"spellBook": {
+			"found": false,
+			"level": 1
+		}
+	},
 	"weapon": {
 		"tier1": {
 			"found": true,
