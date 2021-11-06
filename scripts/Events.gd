@@ -2,3 +2,6 @@ extends Node
 
 signal chargeTrigger
 signal playerAnimationFinished
+signal shakeScreen
+signal tailBombDrop
+signal transitionToRoom

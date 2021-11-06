@@ -35,7 +35,7 @@ func _on_chargeTrigger():
 		pass
 	elif type == Global.TAIL_TYPE.DWARF:
 		if Data.data.inventory.bomb.found == true:
-			print("bomb drop")
+			Events.emit_signal("tailBombDrop", self.position.x, self.position.y)
 	
 	
 func setAnimationFromType():

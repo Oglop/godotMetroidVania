@@ -2,6 +2,12 @@ extends Node
 
 var map = []
 
+var rooms = {
+	"testRoom1": {
+		"title": "Welcome to my shop"
+	}
+}
+
 var data = {
 	"lv":1,
 	"hp":0,
@@ -12,20 +18,20 @@ var data = {
 		"y":0
 	},
 	"tail1": {
-		"type": Global.TAIL_TYPE.POOCH
-	},
-	"tail2": {
 		"type": Global.TAIL_TYPE.DWARF
 	},
+	"tail2": {
+		"type": Global.TAIL_TYPE.NONE
+	},
 	"tail3": {
-		"type": Global.TAIL_TYPE.WIZARD
+		"type": Global.TAIL_TYPE.NONE
 	},
 	"inventory": {
 		"lockPicks": {
 			"found": false
 		},
 		"bomb": {
-			"found": false
+			"found": true
 		},
 		"spellBook": {
 			"found": false,

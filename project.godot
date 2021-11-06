@@ -89,6 +89,7 @@ PAUSE={
 2d_render/layer_7="playerProjectile"
 2d_physics/layer_7="playerProjectile"
 2d_physics/layer_8="hurtbox"
+2d_physics/layer_9="bombable"
 
 [physics]
 
