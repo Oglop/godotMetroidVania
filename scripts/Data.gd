@@ -4,7 +4,21 @@ var map = []
 
 var rooms = {
 	"testRoom1": {
-		"title": "Welcome to my shop"
+		"title": "Welcome to my shop",
+		"monsters": {
+			"normal": Global.MONSTERS.BUG,
+			"rare": Global.MONSTERS.SCORPION,
+			"big": Global.MONSTERS.SQUID
+		}
+	}
+}
+
+var monsters = {
+	"bug": {
+		"title": "Bug",
+		"hp": 12,
+		"speed": 50,
+		"defence": 2
 	}
 }
 

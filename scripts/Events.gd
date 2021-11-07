@@ -5,3 +5,5 @@ signal playerAnimationFinished
 signal shakeScreen
 signal tailBombDrop
 signal transitionToRoom
+signal monsterWasKilled
+signal damageAppliedAt

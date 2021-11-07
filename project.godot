@@ -21,6 +21,7 @@ Data="*res://scripts/Data.gd"
 IoHandler="*res://scripts/handler/IOHandler.gd"
 RoomTransitionHandler="*res://scripts/handler/RoomTransitionHandler.gd"
 Events="*res://scripts/Events.gd"
+RoomDataHandler="*res://scripts/handler/RoomDataHandler.gd"
 
 [display]
 

@@ -21,8 +21,8 @@ func _on_TimerToCritical_timeout():
 	$PlayerBombBody2D/TimerToExplosion.wait_time = waitToExplosion
 	$PlayerBombBody2D/TimerToExplosion.start()
 
-func _on_TimerToExplosion_timeout():
-	Events.emit_signal("shakeScreen")
+func _on_TimerToExplosion_timeout():#duration = 0.2, frequency = 15, amplitude = 5, priority = 0
+	Events.emit_signal("shakeScreen", 0.1, 20, 8, 0)
 	$PlayerBombBody2D/PlayerBombSprite.play("explode")
 	$PlayerBombBody2D/ExplosionArea/ExplosionHitBox.disabled = false
 	
