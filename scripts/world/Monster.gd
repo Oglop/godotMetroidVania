@@ -5,7 +5,7 @@ enum STATE {
 }
 
 var velocity = Vector2(0,0)
-var state = STATE.HIT
+var state = STATE.IDLE
 var type = Global.MONSTERS.NONE
 var title = ""
 var HP = 0
@@ -59,7 +59,8 @@ func _physics_process(delta):
 	velocity = $MonsterBody.move_and_slide(velocity, Vector2.UP)
 	_setAnimationByTypeAndState()
 
-func setMonsterType(_type):
+func setMonsterType(_type, position):
+	self.global_position = position
 	self.type = _type
 	_setMonsterStats()
 	

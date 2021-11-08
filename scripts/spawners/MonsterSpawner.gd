@@ -54,11 +54,10 @@ func _on_MonsterSpawnerTimer_timeout():
 			_resetTimer(10.0, 10.0)
 	elif state == STATES.SPAWNING:
 		var newMonster = Monster.instance()
-		var type = RoomDataHandler.getMonsterSpawnType()
-		newMonster.position.x = self.position.x
-		newMonster.position.y = self.position.y
-		newMonster.setMonsterType(type)
 		self.add_child(newMonster)
+		var type = RoomDataHandler.getMonsterSpawnType()
+		newMonster.setMonsterType(type, self.global_position)
+		
 		state = STATES.WAITING
 		_resetTimer()
 		
