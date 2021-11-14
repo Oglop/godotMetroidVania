@@ -47,3 +47,7 @@ animation = "closed"
 ]]
 position = Vector2( 7.95815, 8.34369 )
 shape = SubResource( 4 )
+
+[node name="DoorTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="DoorTimer" to="." method="_on_DoorTimer_timeout"]

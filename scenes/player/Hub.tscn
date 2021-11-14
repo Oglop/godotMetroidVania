@@ -15,35 +15,35 @@ font_data = ExtResource( 1 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
-region = Rect2( 128, 0, 32, 8 )
+region = Rect2( 64, 8, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
-region = Rect2( 192, 0, 32, 8 )
+region = Rect2( 288, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 32, 8 )
+region = Rect2( 160, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 8, 32, 8 )
+region = Rect2( 256, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 3 )
-region = Rect2( 224, 0, 32, 8 )
+region = Rect2( 192, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 3 )
-region = Rect2( 288, 0, 32, 8 )
+region = Rect2( 64, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 3 )
-region = Rect2( 160, 0, 32, 8 )
+region = Rect2( 96, 8, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
-region = Rect2( 256, 0, 32, 8 )
+region = Rect2( 64, 8, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
@@ -51,66 +51,66 @@ region = Rect2( 64, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 8, 32, 8 )
+region = Rect2( 224, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 8, 32, 8 )
+region = Rect2( 96, 0, 32, 8 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 32, 8 )
+region = Rect2( 128, 0, 32, 8 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ SubResource( 4 ) ],
 "loop": true,
-"name": "two",
+"name": "eight",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 5 ) ],
 "loop": true,
-"name": "four",
+"name": "seven",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ) ],
 "loop": true,
-"name": "one",
+"name": "three",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "eight",
+"name": "six",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ) ],
 "loop": true,
-"name": "five",
+"name": "four",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "seven",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
-"loop": true,
-"name": "three",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ) ],
-"loop": true,
-"name": "six",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "flashing",
 "speed": 20.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 12 ) ],
 "loop": true,
 "name": "zero",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "five",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "one",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ) ],
+"loop": true,
+"name": "two",
 "speed": 5.0
 } ]
 

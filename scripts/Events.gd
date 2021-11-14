@@ -7,3 +7,7 @@ signal tailBombDrop
 signal transitionToRoom
 signal monsterWasKilled
 signal damageAppliedAt
+signal playerPressedAttack
+signal fireDwarfAxeProjectile
+signal fireThiefKnifeProjectile
+signal fireWizardSpellProjectile

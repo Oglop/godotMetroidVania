@@ -9,10 +9,13 @@ var startY = 0
 
 
 func setStartPosition():
+	print("Global.PREVIOUS_ROOM: " + str(Global.PREVIOUS_ROOM) + ", Global.CURRENT_ROOM: " + str(Global.CURRENT_ROOM))
 	if Global.CURRENT_ROOM == Global.ROOMS.PLAINS_START && Global.PREVIOUS_ROOM == Global.ROOMS.NONE:
+		startX = -48
+		startY = 272
+	if Global.CURRENT_ROOM == Global.ROOMS.TEST_ROOM_1 && Global.PREVIOUS_ROOM == Global.ROOMS.PLAINS_START:
 		startX = 500
-		startY = -0
-
+		startY = 0
 
 func _ready():
 	

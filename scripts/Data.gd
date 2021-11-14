@@ -24,8 +24,10 @@ var monsters = {
 
 var data = {
 	"lv":1,
-	"hp":0,
-	"mp":0,
+	"currentHP":0,
+	"maxHP": 100,
+	"currentMP":0,
+	"maxMP":100,
 	"room": {
 		"current": Global.ROOMS.NONE,
 		"x":0,

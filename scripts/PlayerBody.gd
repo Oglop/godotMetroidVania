@@ -46,7 +46,7 @@ func createMap() -> void:
 
 
 func _on_chargeTrigger():
-	print("charge triggered")
+	pass
 	
 func _on_playerAnimationFinished(animation) -> void:
 	if animation == "lv1Attack":

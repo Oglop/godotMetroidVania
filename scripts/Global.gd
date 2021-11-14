@@ -1,7 +1,7 @@
 extends Node
 
 enum MONSTERS { NONE, SCORPION, BUG, SQUID, BLOB }
-enum GAME_STATE { IDLE, AWAIT_INPUT }
+enum GAME_STATE { IDLE, AWAIT_INPUT, DOOR_TRANSITION }
 enum PLAYER_STATE { IDLE, AIR, WALKING, ATTACK, HURT }
 enum TAIL_TYPE { NONE, POOCH, WIZARD, ELF, THIEF, CLERIC, DWARF }
 enum ROOMS {
@@ -84,5 +84,6 @@ var playerState = PLAYER_STATE.IDLE
 var gameState = GAME_STATE.IDLE
 var mapOffestX = 0
 var mapOffsetY = 0
+var saveGameData = {}
 
 

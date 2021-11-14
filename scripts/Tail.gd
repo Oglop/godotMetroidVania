@@ -7,6 +7,7 @@ var type = Global.TAIL_TYPE.NONE
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.connect("chargeTrigger", self, "_on_chargeTrigger")
+	Events.connect("playerPressedAttack", self, "_on_PlayerPressedAttack")
 	setTypeFromPositionInTail()
 	
 func setTypeFromPositionInTail():
@@ -22,9 +23,19 @@ func setPositionInTail(_position, _tailNumber):
 	positionInTail = _position
 	tailNumber = _tailNumber
 	
-
+func _on_PlayerPressedAttack():
+	if type == Global.TAIL_TYPE.POOCH:
+		pass
+	elif type == Global.TAIL_TYPE.THIEF:
+		Events.emit_signal("fireThiefKnifeProjectile", self.global_position.x, self.global_position.y, Global.TAIL_DIRECTION[positionInTail])
+	elif type == Global.TAIL_TYPE.WIZARD:
+		Events.emit_signal("fireWizardSpellProjectile", self.global_position.x, self.global_position.y, Global.TAIL_DIRECTION[positionInTail])
+	elif type == Global.TAIL_TYPE.ELF:
+		pass
+	elif type == Global.TAIL_TYPE.DWARF:
+		Events.emit_signal("fireDwarfAxeProjectile", self.global_position.x, self.global_position.y, Global.TAIL_DIRECTION[positionInTail])
+		
 func _on_chargeTrigger():
-	print("charge triggered tail")
 	if type == Global.TAIL_TYPE.POOCH:
 		pass
 	elif type == Global.TAIL_TYPE.THIEF:
