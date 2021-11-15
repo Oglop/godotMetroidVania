@@ -22,6 +22,26 @@ var monsters = {
 	}
 }
 
+var tailData = {
+	"weapons": {
+		"dwarfAxe": {
+			"duration": 0.2,
+			"damage": 3,
+			"speed": 340
+		},
+		"thiefKnife": {
+			"duration": 0.2,
+			"damage": 2,
+			"speed": 340
+		},
+		"wizardFireball": {
+			"duration": 0.3,
+			"damage": 5,
+			"speed": 300
+		}
+	}
+}
+
 var data = {
 	"lv":1,
 	"currentHP":0,
@@ -34,10 +54,10 @@ var data = {
 		"y":0
 	},
 	"tail1": {
-		"type": Global.TAIL_TYPE.DWARF
+		"type": Global.TAIL_TYPE.THIEF
 	},
 	"tail2": {
-		"type": Global.TAIL_TYPE.NONE
+		"type": Global.TAIL_TYPE.WIZARD
 	},
 	"tail3": {
 		"type": Global.TAIL_TYPE.NONE

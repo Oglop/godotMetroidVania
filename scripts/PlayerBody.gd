@@ -58,9 +58,12 @@ func checkPositionOnMap():
 	Data.map[currentMapX][currentMapY] = 1
 
 func _physics_process(delta):
+	if Global.playerState == Global.PLAYER_STATE.GO_THROUGH_DOOR:
+		return
 	
 	if Global.playerState != Global.PLAYER_STATE.ATTACK:
 		if Input.is_action_just_pressed("ACTION_MAIN"):
+			Events.emit_signal("playerPressedAttack")
 			Global.playerState = Global.PLAYER_STATE.ATTACK
 			
 	if Global.playerState != Global.PLAYER_STATE.ATTACK || !self.is_on_floor():

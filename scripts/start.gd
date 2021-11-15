@@ -10,6 +10,7 @@ extends Node2D
 func _ready():
 	randomize()
 	IoHandler.loadGame()
+	Global.saveGameData.currentHP = Global.saveGameData.maxHP
 	#get_tree().change_scene("res://scenes/world/World.tscn")
 	get_tree().change_scene("res://scenes/world/StartRoom.tscn")
 

@@ -34,6 +34,8 @@ func _ready():
 	self.add_child(tail1)
 	self.add_child(player)
 	
+	Global.playerState = Global.PLAYER_STATE.IDLE
+	
 	
 
 

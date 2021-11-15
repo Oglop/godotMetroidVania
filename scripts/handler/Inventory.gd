@@ -46,69 +46,69 @@ func isSelected(x,y):
 	
 func initializeUIGrid():
 	# SWORD
-	if Data.data.weapon.tier1.found == false:
+	if Global.saveGameData.weapon.tier1.found == false:
 		grid[0][0] = 1
-	elif Data.data.weapon.tier1.found == true:
+	elif Global.saveGameData.weapon.tier1.found == true:
 		grid[0][0] = 1
-	if Data.data.weapon.tier1.equiped == true:
+	if Global.saveGameData.weapon.tier1.equiped == true:
 		grid[0][0] = 2
 		
-	if Data.data.weapon.tier2.found == false:
+	if Global.saveGameData.weapon.tier2.found == false:
 		grid[1][0] = 0
-	elif Data.data.weapon.tier2.found == true:
+	elif Global.saveGameData.weapon.tier2.found == true:
 		grid[1][0] = 1
-	if Data.data.weapon.tier2.equiped == true:
+	if Global.saveGameData.weapon.tier2.equiped == true:
 		grid[1][0] = 2
 		
-	if Data.data.weapon.tier3.found == false:
+	if Global.saveGameData.weapon.tier3.found == false:
 		grid[2][0] = 0
-	elif Data.data.weapon.tier3.found == true:
+	elif Global.saveGameData.weapon.tier3.found == true:
 		grid[2][0] = 1
-	if Data.data.weapon.tier3.equiped == true:
+	if Global.saveGameData.weapon.tier3.equiped == true:
 		grid[2][0] = 2
 		
 	# ARMOR
-	if Data.data.armor.tier1.found == false:
+	if Global.saveGameData.armor.tier1.found == false:
 		grid[0][1] = 1
-	elif Data.data.armor.tier1.found == true:
+	elif Global.saveGameData.armor.tier1.found == true:
 		grid[0][1] = 1
-	if Data.data.armor.tier1.equiped == true:
+	if Global.saveGameData.armor.tier1.equiped == true:
 		grid[0][1] = 2
 		
-	if Data.data.armor.tier2.found == false:
+	if Global.saveGameData.armor.tier2.found == false:
 		grid[1][1] = 0
-	elif Data.data.armor.tier2.found == true:
+	elif Global.saveGameData.armor.tier2.found == true:
 		grid[1][1] = 1
-	if Data.data.armor.tier2.equiped == true:
+	if Global.saveGameData.armor.tier2.equiped == true:
 		grid[1][1] = 2
 		
-	if Data.data.armor.tier3.found == false:
+	if Global.saveGameData.armor.tier3.found == false:
 		grid[2][1] = 0
-	elif Data.data.armor.tier3.found == true:
+	elif Global.saveGameData.armor.tier3.found == true:
 		grid[2][1] = 1
-	if Data.data.armor.tier3.equiped == true:
+	if Global.saveGameData.armor.tier3.equiped == true:
 		grid[2][1] = 2
 				
 	# SHEILD
-	if Data.data.shield.tier1.found == false:
+	if Global.saveGameData.shield.tier1.found == false:
 		grid[0][2] = 1
-	elif Data.data.shield.tier1.found == true:
+	elif Global.saveGameData.shield.tier1.found == true:
 		grid[0][2] = 1
-	if Data.data.shield.tier1.equiped == true:
+	if Global.saveGameData.shield.tier1.equiped == true:
 		grid[0][2] = 2
 		
-	if Data.data.shield.tier2.found == false:
+	if Global.saveGameData.shield.tier2.found == false:
 		grid[1][2] = 0
-	elif Data.data.shield.tier2.found == true:
+	elif Global.saveGameData.shield.tier2.found == true:
 		grid[1][2] = 1
-	if Data.data.shield.tier2.equiped == true:
+	if Global.saveGameData.shield.tier2.equiped == true:
 		grid[1][2] = 2
 		
-	if Data.data.shield.tier3.found == false:
+	if Global.saveGameData.shield.tier3.found == false:
 		grid[2][2] = 0
-	elif Data.data.shield.tier3.found == true:
+	elif Global.saveGameData.shield.tier3.found == true:
 		grid[2][2] = 1
-	if Data.data.shield.tier3.equiped == true:
+	if Global.saveGameData.shield.tier3.equiped == true:
 		grid[2][2] = 2
 				
 #
@@ -144,11 +144,11 @@ func drawInventoryGrid():
 	# SWORD 1
 	if isSelected(0, 0):
 		sword1AN.play("selected")
-	elif Data.data.weapon.tier1.found == true:
+	elif Global.saveGameData.weapon.tier1.found == true:
 		sword1AN.play("found")
 	else:
 		sword1AN.play("notFound")
-	if Data.data.weapon.tier1.equiped == true:
+	if Global.saveGameData.weapon.tier1.equiped == true:
 		sword1EQ.show()
 	else:
 		sword1EQ.hide()
@@ -156,11 +156,11 @@ func drawInventoryGrid():
 	#SWORD 2
 	if isSelected(1, 0):
 		sword2AN.play("selected")
-	elif Data.data.weapon.tier2.found == true:
+	elif Global.saveGameData.weapon.tier2.found == true:
 		sword2AN.play("found")
 	else:
 		sword2AN.play("notFound")
-	if Data.data.weapon.tier2.equiped == true:
+	if Global.saveGameData.weapon.tier2.equiped == true:
 		sword2EQ.show()
 	else:
 		sword2EQ.hide()
@@ -168,11 +168,11 @@ func drawInventoryGrid():
 	#SWORD 3
 	if isSelected(2, 0):
 		sword3AN.play("selected")
-	elif Data.data.weapon.tier3.found == true:
+	elif Global.saveGameData.weapon.tier3.found == true:
 		sword3AN.play("found")
 	else:
 		sword3AN.play("notFound")
-	if Data.data.weapon.tier3.equiped == true:
+	if Global.saveGameData.weapon.tier3.equiped == true:
 		sword3EQ.show()
 	else:
 		sword3EQ.hide()
@@ -181,11 +181,11 @@ func drawInventoryGrid():
 	# ARMOR 1
 	if isSelected(0, 1):
 		armor1AN.play("selected")
-	elif Data.data.armor.tier1.found == true:
+	elif Global.saveGameData.armor.tier1.found == true:
 		armor1AN.play("found")
 	else:
 		armor1AN.play("notFound")
-	if Data.data.armor.tier1.equiped == true:
+	if Global.saveGameData.armor.tier1.equiped == true:
 		armor1EQ.show()
 	else:
 		armor1EQ.hide()
@@ -193,11 +193,11 @@ func drawInventoryGrid():
 	#ARMOR 2
 	if isSelected(1, 1):
 		armor2AN.play("selected")
-	elif Data.data.armor.tier2.found == true:
+	elif Global.saveGameData.armor.tier2.found == true:
 		armor2AN.play("found")
 	else:
 		armor2AN.play("notFound")
-	if Data.data.armor.tier2.equiped == true:
+	if Global.saveGameData.armor.tier2.equiped == true:
 		armor2EQ.show()
 	else:
 		armor2EQ.hide()
@@ -205,11 +205,11 @@ func drawInventoryGrid():
 	#ARMOR 3
 	if isSelected(2, 1):
 		armor3AN.play("selected")
-	elif Data.data.armor.tier3.found == true:
+	elif Global.saveGameData.armor.tier3.found == true:
 		armor3AN.play("found")
 	else:
 		armor3AN.play("notFound")
-	if Data.data.armor.tier3.equiped == true:
+	if Global.saveGameData.armor.tier3.equiped == true:
 		armor3EQ.show()
 	else:
 		armor3EQ.hide()
@@ -218,11 +218,11 @@ func drawInventoryGrid():
 		# SHIELD 1
 	if isSelected(0, 2):
 		shield1AN.play("selected")
-	elif Data.data.shield.tier1.found == true:
+	elif Global.saveGameData.shield.tier1.found == true:
 		shield1AN.play("found")
 	else:
 		shield1AN.play("notFound")
-	if Data.data.shield.tier1.equiped == true:
+	if Global.saveGameData.shield.tier1.equiped == true:
 		shield1EQ.show()
 	else:
 		shield1EQ.hide()
@@ -230,11 +230,11 @@ func drawInventoryGrid():
 	# SHIELD 2
 	if isSelected(1, 2):
 		shield2AN.play("selected")
-	elif Data.data.shield.tier2.found == true:
+	elif Global.saveGameData.shield.tier2.found == true:
 		shield2AN.play("found")
 	else:
 		shield2AN.play("notFound")
-	if Data.data.shield.tier2.equiped == true:
+	if Global.saveGameData.shield.tier2.equiped == true:
 		shield2EQ.show()
 	else:
 		shield2EQ.hide()
@@ -242,11 +242,11 @@ func drawInventoryGrid():
 	# SHIELD 3
 	if isSelected(2, 2):
 		shield3AN.play("selected")
-	elif Data.data.shield.tier3.found == true:
+	elif Global.saveGameData.shield.tier3.found == true:
 		shield3AN.play("found")
 	else:
 		shield3AN.play("notFound")
-	if Data.data.shield.tier3.equiped == true:
+	if Global.saveGameData.shield.tier3.equiped == true:
 		shield3EQ.show()
 	else:
 		shield3EQ.hide()
@@ -254,43 +254,43 @@ func drawInventoryGrid():
 
 func setEquipedItem():
 	if colIndex == 0 && rowIndex == 0:
-		Data.data.weapon.tier1.equiped = true
-		Data.data.weapon.tier2.equiped = false
-		Data.data.weapon.tier3.equiped = false
+		Global.saveGameData.weapon.tier1.equiped = true
+		Global.saveGameData.weapon.tier2.equiped = false
+		Global.saveGameData.weapon.tier3.equiped = false
 	if colIndex == 1 && rowIndex == 0:
-		Data.data.weapon.tier1.equiped = false
-		Data.data.weapon.tier2.equiped = true
-		Data.data.weapon.tier3.equiped = false
+		Global.saveGameData.weapon.tier1.equiped = false
+		Global.saveGameData.weapon.tier2.equiped = true
+		Global.saveGameData.weapon.tier3.equiped = false
 	if colIndex == 2 && rowIndex == 0:
-		Data.data.weapon.tier1.equiped = false
-		Data.data.weapon.tier2.equiped = false
-		Data.data.weapon.tier3.equiped = true
+		Global.saveGameData.weapon.tier1.equiped = false
+		Global.saveGameData.weapon.tier2.equiped = false
+		Global.saveGameData.weapon.tier3.equiped = true
 		
 	if colIndex == 0 && rowIndex == 1:
-		Data.data.armor.tier1.equiped = true
-		Data.data.armor.tier2.equiped = false
-		Data.data.armor.tier3.equiped = false
+		Global.saveGameData.armor.tier1.equiped = true
+		Global.saveGameData.armor.tier2.equiped = false
+		Global.saveGameData.armor.tier3.equiped = false
 	if colIndex == 1 && rowIndex == 1:
-		Data.data.armor.tier1.equiped = false
-		Data.data.armor.tier2.equiped = true
-		Data.data.armor.tier3.equiped = false
+		Global.saveGameData.armor.tier1.equiped = false
+		Global.saveGameData.armor.tier2.equiped = true
+		Global.saveGameData.armor.tier3.equiped = false
 	if colIndex == 2 && rowIndex == 1:
-		Data.data.armor.tier1.equiped = false
-		Data.data.armor.tier2.equiped = false
-		Data.data.armor.tier3.equiped = true
+		Global.saveGameData.armor.tier1.equiped = false
+		Global.saveGameData.armor.tier2.equiped = false
+		Global.saveGameData.armor.tier3.equiped = true
 		
 	if colIndex == 0 && rowIndex == 2:
-		Data.data.shield.tier1.equiped = true
-		Data.data.shield.tier2.equiped = false
-		Data.data.shield.tier3.equiped = false
+		Global.saveGameData.shield.tier1.equiped = true
+		Global.saveGameData.shield.tier2.equiped = false
+		Global.saveGameData.shield.tier3.equiped = false
 	if colIndex == 1 && rowIndex == 2:
-		Data.data.shield.tier1.equiped = false
-		Data.data.shield.tier2.equiped = true
-		Data.data.shield.tier3.equiped = false
+		Global.saveGameData.shield.tier1.equiped = false
+		Global.saveGameData.shield.tier2.equiped = true
+		Global.saveGameData.shield.tier3.equiped = false
 	if colIndex == 2 && rowIndex == 2:
-		Data.data.shield.tier1.equiped = false
-		Data.data.shield.tier2.equiped = false
-		Data.data.shield.tier3.equiped = true
+		Global.saveGameData.shield.tier1.equiped = false
+		Global.saveGameData.shield.tier2.equiped = false
+		Global.saveGameData.shield.tier3.equiped = true
 		
 		
 func togglePause():

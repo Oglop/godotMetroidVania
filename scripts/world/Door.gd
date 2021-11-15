@@ -16,7 +16,7 @@ func _process(delta):
 	if state == DOOR_STATE.CLOSED:
 		$DoorSprite.play("closed")
 	if state == DOOR_STATE.OPEN:
-		$DoorSprite.play("closed")
+		$DoorSprite.play("open")
 	if Input.is_action_just_pressed("UP"):
 		if $Area2D.get_overlapping_bodies().size() > 0:
 			var playerGroup = get_tree().get_nodes_in_group("player")
@@ -24,6 +24,7 @@ func _process(delta):
 			for body in bodies:
 				if body.is_in_group("player"):
 					state = DOOR_STATE.OPEN
+					Global.playerState = Global.PLAYER_STATE.GO_THROUGH_DOOR
 					$DoorTimer.start(doorTimerDuration)
 
 func _on_DoorTimer_timeout():

@@ -1,13 +1,20 @@
 extends Node
 
+signal addXP
 signal chargeTrigger
-signal playerAnimationFinished
-signal shakeScreen
-signal tailBombDrop
-signal transitionToRoom
-signal monsterWasKilled
 signal damageAppliedAt
-signal playerPressedAttack
 signal fireDwarfAxeProjectile
 signal fireThiefKnifeProjectile
 signal fireWizardSpellProjectile
+signal fireElfArrowProjectile
+signal monsterWasKilled
+signal playerAnimationFinished
+signal playerPressedAttack
+signal shakeScreen
+signal tailBombDrop
+signal transitionToRoom
+
+
+
+
+

@@ -12,29 +12,28 @@ func _ready():
 	
 func setTypeFromPositionInTail():
 	if tailNumber == 1:
-		type = Data.data.tail1.type
+		type = Global.saveGameData.tail1.type
 	if tailNumber == 2:
-		type = Data.data.tail2.type
+		type = Global.saveGameData.tail2.type
 	if tailNumber == 3:
-		type = Data.data.tail3.type
-		
-	
+		type = Global.saveGameData.tail3.type
+
 func setPositionInTail(_position, _tailNumber):
 	positionInTail = _position
 	tailNumber = _tailNumber
-	
+
 func _on_PlayerPressedAttack():
 	if type == Global.TAIL_TYPE.POOCH:
 		pass
 	elif type == Global.TAIL_TYPE.THIEF:
-		Events.emit_signal("fireThiefKnifeProjectile", self.global_position.x, self.global_position.y, Global.TAIL_DIRECTION[positionInTail])
+		Events.emit_signal("fireThiefKnifeProjectile", $onPosition.global_position, Global.TAIL_DIRECTION[positionInTail])
 	elif type == Global.TAIL_TYPE.WIZARD:
-		Events.emit_signal("fireWizardSpellProjectile", self.global_position.x, self.global_position.y, Global.TAIL_DIRECTION[positionInTail])
+		Events.emit_signal("fireWizardSpellProjectile", $onPosition.global_position, Global.TAIL_DIRECTION[positionInTail])
 	elif type == Global.TAIL_TYPE.ELF:
-		pass
+		Events.emit_signal("fireElfArrow", $onPosition.global_position, Global.TAIL_DIRECTION[positionInTail])
 	elif type == Global.TAIL_TYPE.DWARF:
-		Events.emit_signal("fireDwarfAxeProjectile", self.global_position.x, self.global_position.y, Global.TAIL_DIRECTION[positionInTail])
-		
+		Events.emit_signal("fireDwarfAxeProjectile", $onPosition.global_position, Global.TAIL_DIRECTION[positionInTail])
+
 func _on_chargeTrigger():
 	if type == Global.TAIL_TYPE.POOCH:
 		pass
@@ -45,10 +44,9 @@ func _on_chargeTrigger():
 	elif type == Global.TAIL_TYPE.ELF:
 		pass
 	elif type == Global.TAIL_TYPE.DWARF:
-		if Data.data.inventory.bomb.found == true:
+		if Global.saveGameData.inventory.bomb.found == true:
 			Events.emit_signal("tailBombDrop", self.position.x, self.position.y)
-	
-	
+
 func setAnimationFromType():
 	if type == Global.TAIL_TYPE.NONE:
 		$TailSprite.hide()
@@ -103,12 +101,8 @@ func setAnimationFromType():
 			elif type == Global.TAIL_TYPE.DWARF:
 				$TailSprite.play("dwarfAir")
 	
-		
-	
 func _physics_process(delta):
 	if Global.playerState != Global.PLAYER_STATE.IDLE:
 		self.position = Vector2(Global.X_POSITIONS[positionInTail], Global.Y_POSITIONS[positionInTail])
 		$TailSprite.flip_h = Global.TAIL_DIRECTION[positionInTail]
 	setAnimationFromType()
-
-

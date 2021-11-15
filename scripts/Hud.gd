@@ -7,8 +7,8 @@ func _ready():
 	pass
 	
 func _process(delta):
-	$lblCurrentHP.text = str(Data.data.currentHP)
-	$lblMaxHP.text = str(Data.data.maxHP)
+	$lblCurrentHP.text = str(Global.saveGameData.currentHP)
+	$lblMaxHP.text = str(Global.saveGameData.maxHP)
 	
 	if Input.is_action_pressed("ACTION_MAIN"):
 		Global.chargeCounter += (100 * delta)

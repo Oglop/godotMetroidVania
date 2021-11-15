@@ -11,6 +11,7 @@ var title = ""
 var HP = 0
 var speed = 0
 var defence = 0
+var xp = 0
 
 
 func _applyDamage(damage):
@@ -19,7 +20,7 @@ func _applyDamage(damage):
 		calculatedDamage = 0
 	HP -= calculatedDamage
 	if calculatedDamage >= 0:
-		Events.emit_signal("damageAppliedAt", calculatedDamage, self.position.x, self.position.y)
+		Events.emit_signal("damageAppliedAt", calculatedDamage, self.global_position.x, self.global_position.y)
 
 func _setAnimationByTypeAndState() -> void:
 	if state == STATE.IDLE:
@@ -36,7 +37,7 @@ func _setAnimationByTypeAndState() -> void:
 			$MonsterBody/MonsterSprite.play("scorpionHit")
 		if type == Global.MONSTERS.SQUID:
 			$MonsterBody/MonsterSprite.play("squidHit")
-	
+
 
 func _setMonsterStats() -> void:
 	if type == Global.MONSTERS.BUG:
@@ -44,15 +45,23 @@ func _setMonsterStats() -> void:
 		HP = Data.monsters.bug.hp
 		speed = Data.monsters.bug.speed
 		defence = Data.monsters.bug.defence
+		xp = Data.monsters.bug.xp
 	if type == Global.MONSTERS.SCORPION:
 		title = Data.monsters.scorpion.title
 		HP = Data.monsters.scorpion.hp
 		speed = Data.monsters.scorpion.speed
 		defence = Data.monsters.scorpion.defence
+		xp = Data.monsters.scorpion.xp
 
 
 func _ready():
 	pass
+	
+func _checkHP() -> void:
+	if HP <= 0:
+		#spawn effect
+		Events.emit_signal("addXP", xp)
+		self.queue_free()
 	
 func _physics_process(delta):
 	velocity.y += Global.GRAVITY
