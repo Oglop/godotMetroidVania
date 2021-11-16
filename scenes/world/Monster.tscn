@@ -117,9 +117,6 @@ animations = [ {
 "monster",
 ]]
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="MonsterBody" type="KinematicBody2D" parent="."]
 collision_layer = 16
@@ -138,3 +135,16 @@ playing = true
 
 [node name="MonsterPositionMiddle" type="Position2D" parent="MonsterBody"]
 position = Vector2( 0.0556812, 9.85557 )
+
+[node name="RayCasterFloor" type="RayCast2D" parent="MonsterBody"]
+position = Vector2( 8, 16 )
+cast_to = Vector2( 0, 8 )
+collision_mask = 2
+
+[node name="RayCasterWall" type="RayCast2D" parent="MonsterBody"]
+position = Vector2( 8, 8 )
+rotation = -1.5708
+cast_to = Vector2( 0, 8 )
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false

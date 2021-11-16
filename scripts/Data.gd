@@ -37,7 +37,22 @@ var tailData = {
 		"wizardFireball": {
 			"duration": 0.3,
 			"damage": 5,
-			"speed": 300
+			"speed": 240
+		},
+		"swordAttackTier1": {
+			"duration": 0.2,
+			"damage": 3,
+			"speed": 340
+		},
+		"swordAttackTier2": {
+			"duration": 0.3,
+			"damage": 3,
+			"speed": 340
+		},
+		"swordAttackTier3": {
+			"duration": 0.4,
+			"damage": 3,
+			"speed": 340
 		}
 	}
 }

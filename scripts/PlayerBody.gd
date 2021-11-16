@@ -63,8 +63,8 @@ func _physics_process(delta):
 	
 	if Global.playerState != Global.PLAYER_STATE.ATTACK:
 		if Input.is_action_just_pressed("ACTION_MAIN"):
-			Events.emit_signal("playerPressedAttack")
-			Global.playerState = Global.PLAYER_STATE.ATTACK
+			Events.emit_signal("playerPressedAttack", $OnBodyPoint.global_position, $PlayerSprite.flip_h)
+			#Global.playerState = Global.PLAYER_STATE.ATTACK
 			
 	if Global.playerState != Global.PLAYER_STATE.ATTACK || !self.is_on_floor():
 		if Input.is_action_pressed("RIGHT"):
@@ -93,7 +93,7 @@ func _physics_process(delta):
 			Global.TAIL_ANIMATION[0] = Global.playerState
 			Global.TAIL_DIRECTION[0] = $PlayerSprite.flip_h
 		
-	if Input.is_action_just_pressed("JUMP") && self.is_on_floor() && Global.playerState != Global.PLAYER_STATE.ATTACK:
+	if Input.is_action_just_pressed("JUMP") && self.is_on_floor():# && Global.playerState != Global.PLAYER_STATE.ATTACK:
 		velocity.y = Global.JUMP_STRENGTH
 	
 	velocity = self.move_and_slide(velocity, Vector2.UP)

@@ -1,17 +1,18 @@
 extends Node2D
 
 enum STATE {
-	IDLE, HIT
+	IDLE, HIT, WALKING, FALLING
 }
 
-var velocity = Vector2(0,0)
+var velocity: Vector2 = Vector2(0,0)
 var state = STATE.IDLE
 var type = Global.MONSTERS.NONE
-var title = ""
-var HP = 0
-var speed = 0
-var defence = 0
-var xp = 0
+var title: String = ""
+var HP: int = 0
+var speed: int = 0
+var defence: int = 0
+var xp: int = 0
+var flipped: bool = false
 
 
 func _applyDamage(damage):
@@ -23,6 +24,7 @@ func _applyDamage(damage):
 		Events.emit_signal("damageAppliedAt", calculatedDamage, self.global_position.x, self.global_position.y)
 
 func _setAnimationByTypeAndState() -> void:
+	$MonsterBody/MonsterSprite.flip_h = flipped
 	if state == STATE.IDLE:
 		if type == Global.MONSTERS.BUG:
 			$MonsterBody/MonsterSprite.play("bug")
@@ -38,7 +40,6 @@ func _setAnimationByTypeAndState() -> void:
 		if type == Global.MONSTERS.SQUID:
 			$MonsterBody/MonsterSprite.play("squidHit")
 
-
 func _setMonsterStats() -> void:
 	if type == Global.MONSTERS.BUG:
 		title = Data.monsters.bug.title
@@ -53,16 +54,20 @@ func _setMonsterStats() -> void:
 		defence = Data.monsters.scorpion.defence
 		xp = Data.monsters.scorpion.xp
 
-
 func _ready():
-	pass
-	
+	var rng = RandomNumberGenerator.new()
+	var i = rng.randi_range(0,1)
+	if i == 0:
+		flipped = false
+	else:
+		flipped = true
+
 func _checkHP() -> void:
 	if HP <= 0:
 		#spawn effect
 		Events.emit_signal("addXP", xp)
 		self.queue_free()
-	
+
 func _physics_process(delta):
 	velocity.y += Global.GRAVITY
 	velocity = $MonsterBody.move_and_slide(velocity, Vector2.UP)

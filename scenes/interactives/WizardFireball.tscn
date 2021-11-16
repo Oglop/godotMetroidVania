@@ -40,6 +40,7 @@ shape = SubResource( 1 )
 
 [node name="WizardFireballSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
+frame = 1
 playing = true
 
 [node name="Duration" type="Timer" parent="."]

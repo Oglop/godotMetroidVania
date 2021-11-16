@@ -22,7 +22,7 @@ func setPositionInTail(_position, _tailNumber):
 	positionInTail = _position
 	tailNumber = _tailNumber
 
-func _on_PlayerPressedAttack():
+func _on_PlayerPressedAttack(args1, args2):
 	if type == Global.TAIL_TYPE.POOCH:
 		pass
 	elif type == Global.TAIL_TYPE.THIEF:

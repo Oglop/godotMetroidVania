@@ -4,12 +4,14 @@ var bomb = preload("res://scenes/effects/PlayerBomb.tscn")
 var dwarfAxe = preload("res://scenes/interactives/DwarfAxe.tscn")
 var thiefKnife = preload("res://scenes/interactives/ThiefKnife.tscn")
 var wizardFireball = preload("res://scenes/interactives/WizardFireball.tscn")
+var swordAttack = preload("res://scenes/interactives/SwordAttack.tscn")
 
 func _ready():
 	Events.connect("tailBombDrop", self, "_on_tailBombDrop")
 	Events.connect("fireDwarfAxeProjectile", self, "_on_fireDwarfAxeProjectile")
 	Events.connect("fireThiefKnifeProjectile", self, "_on_thiefKnifeProjectile")
 	Events.connect("fireWizardSpellProjectile", self, "_on_wizardFireballProjectile")
+	Events.connect("playerPressedAttack", self, "_on_swordAttackProjectile")
 	
 func _on_fireDwarfAxeProjectile(fromPosition: Vector2, isFlipped: bool) -> void:
 	var axe = dwarfAxe.instance()
@@ -25,6 +27,12 @@ func _on_wizardFireballProjectile(fromPosition: Vector2, isFlipped: bool) -> voi
 	var projectile = wizardFireball.instance()
 	projectile.setValues(fromPosition, isFlipped)
 	self.add_child(projectile)
+	
+func _on_swordAttackProjectile(fromPosition: Vector2, isFlipped: bool) -> void:
+	var projectile = swordAttack.instance()
+	projectile.setValues(fromPosition, isFlipped)
+	self.add_child(projectile)
+	
 
 func _on_tailBombDrop(_x, _y):
 	var newBomb = bomb.instance()
