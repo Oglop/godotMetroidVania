@@ -11,6 +11,11 @@ enum ROOMS {
 	PLAINS_VILLAGE,
 	PLAINS_WEST
 }
+enum ROOM_PARTICLE_EFFECTS {
+	NONE,
+	LEAVES
+}
+
 enum DIRECTIONS { RIGHT, UP, LEFT, DOWN }
 
 var STORAGE_PATH = "user://data/data.json"
@@ -84,6 +89,59 @@ var playerState = PLAYER_STATE.IDLE
 var gameState = GAME_STATE.IDLE
 var mapOffestX = 0
 var mapOffsetY = 0
-var saveGameData = {}
+var saveGameData = {
+	"language": "en",
+	"weapon": {
+		"tier1": {
+			"found": true,
+			"equiped": true
+		},
+		"tier2": {
+			"found": false,
+			"equiped": false
+		},
+		"tier3": {
+			"found": false,
+			"equiped": false
+		}
+	}, 
+	"armor": {
+		"tier1": {
+			"found": true,
+			"equiped": true
+		},
+		"tier2": {
+			"found": false,
+			"equiped": false
+		},
+		"tier3": {
+			"found": false,
+			"equiped": false
+		}
+	},
+	"shield": {
+		"tier1": {
+			"found": true,
+			"equiped": true
+		},
+		"tier2": {
+			"found": false,
+			"equiped": false
+		},
+		"tier3": {
+			"found": false,
+			"equiped": false
+		}
+	},
+	"tail1": {
+		"type": TAIL_TYPE.THIEF
+	},
+	"tail2": {
+		"type": TAIL_TYPE.WIZARD
+	},
+	"tail3": {
+		"type": TAIL_TYPE.NONE
+	},
+}
 
 

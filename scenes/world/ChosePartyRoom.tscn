@@ -1,0 +1,247 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scripts/world/ChosePartyRoom.gd" type="Script" id=1]
+[ext_resource path="res://scenes/components/NPCRoomTileMap.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/16bfZX.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/components/ButtonPressIndicator.tscn" type="PackedScene" id=4]
+[ext_resource path="res://images/npcRooms.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 48, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 48, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "tier1",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "tier2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
+"loop": true,
+"name": "tier3",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 16, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 32, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 48, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 80, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=15]
+animations = [ {
+"frames": [ SubResource( 9 ) ],
+"loop": true,
+"name": "dwarf",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 10 ) ],
+"loop": true,
+"name": "cleric",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 11 ) ],
+"loop": true,
+"name": "thief",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ) ],
+"loop": true,
+"name": "elf",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "pooch",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ) ],
+"loop": true,
+"name": "wizard",
+"speed": 5.0
+} ]
+
+[node name="ChosePartyRoom" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Camera" type="Camera2D" parent="."]
+position = Vector2( 160, 120 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_right = 320.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPCRoomTileMap" parent="CanvasLayer" instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 65537, 0, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 2, 0, 131073, 7, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 6, 0, 131087, 6, 0, 131088, 6, 0, 131089, 6, 0, 131090, 8, 0, 196609, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 9, 0, 196621, 0, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 2, 0, 262145, 3, 0, 262156, 10, 0, 262157, 3, 0, 262162, 5, 0, 327681, 3, 0, 327692, 10, 0, 327693, 3, 0, 327698, 5, 0, 393217, 3, 0, 393228, 10, 0, 393229, 3, 0, 393234, 5, 0, 458753, 3, 0, 458764, 10, 0, 458765, 3, 0, 458770, 5, 0, 524289, 3, 0, 524300, 10, 0, 524301, 3, 0, 524306, 5, 0, 589825, 3, 0, 589836, 10, 0, 589837, 7, 0, 589838, 6, 0, 589839, 6, 0, 589840, 6, 0, 589841, 6, 0, 589842, 8, 0, 655361, 3, 0, 655372, 10, 0, 720897, 3, 0, 720908, 10, 0, 786433, 3, 0, 786444, 10, 0, 851969, 7, 0, 851970, 6, 0, 851971, 6, 0, 851972, 6, 0, 851973, 6, 0, 851974, 6, 0, 851975, 6, 0, 851976, 6, 0, 851977, 6, 0, 851978, 6, 0, 851979, 6, 0, 851980, 11, 0 )
+
+[node name="lblHeader" type="Label" parent="CanvasLayer"]
+margin_left = 20.0
+margin_top = 31.0
+margin_right = 301.0
+margin_bottom = 45.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblDescription" type="Label" parent="CanvasLayer"]
+margin_left = 20.0
+margin_top = 61.0
+margin_right = 195.0
+margin_bottom = 99.0
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblOption1" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 192.0
+margin_bottom = 107.0
+custom_fonts/font = SubResource( 1 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblOption2" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 192.0
+margin_bottom = 123.0
+custom_fonts/font = SubResource( 1 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblOption3" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 144.0
+margin_right = 192.0
+margin_bottom = 156.0
+custom_fonts/font = SubResource( 1 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblOption4" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 192.0
+margin_bottom = 171.0
+custom_fonts/font = SubResource( 1 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblOption5" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 139.0
+custom_fonts/font = SubResource( 1 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lblOption6" type="Label" parent="CanvasLayer"]
+margin_left = 32.0
+margin_top = 176.0
+margin_right = 192.0
+margin_bottom = 187.0
+custom_fonts/font = SubResource( 1 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPCRoomButtonIndicator" parent="CanvasLayer" instance=ExtResource( 4 )]
+position = Vector2( 188.504, 213.505 )
+
+[node name="Selector" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 27, 102 )
+scale = Vector2( 1, 0.8125 )
+frames = SubResource( 3 )
+
+[node name="PlayerSprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 232, 144 )
+frames = SubResource( 8 )
+animation = "tier3"
+
+[node name="Member1Sprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 248, 144 )
+frames = SubResource( 15 )
+animation = "wizard"
+
+[node name="Member2Sprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 264, 144 )
+frames = SubResource( 15 )
+animation = "wizard"
+
+[node name="Member3Sprite" type="AnimatedSprite" parent="CanvasLayer"]
+position = Vector2( 280, 144 )
+frames = SubResource( 15 )
+animation = "wizard"
+
+[node name="Delay" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Delay" to="." method="_on_Delay_timeout"]

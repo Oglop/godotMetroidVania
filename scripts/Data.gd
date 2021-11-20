@@ -35,9 +35,9 @@ var tailData = {
 			"speed": 340
 		},
 		"wizardFireball": {
-			"duration": 0.3,
+			"duration": 0.4,
 			"damage": 5,
-			"speed": 240
+			"speed": 220
 		},
 		"swordAttackTier1": {
 			"duration": 0.2,
@@ -58,6 +58,7 @@ var tailData = {
 }
 
 var data = {
+	"language":"en",
 	"lv":1,
 	"currentHP":0,
 	"maxHP": 100,

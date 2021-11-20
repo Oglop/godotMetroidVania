@@ -46,3 +46,7 @@ func _physics_process(delta):
 func setValues(_position: Vector2, _isFlipped: bool) -> void:
 	self.global_position = _position
 	self.flipped = _isFlipped
+
+
+func _on_Area2D_body_entered(body):
+	pass # Replace with function body.

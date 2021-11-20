@@ -10,9 +10,12 @@ signal fireElfArrowProjectile
 signal monsterWasKilled
 signal playerAnimationFinished
 signal playerPressedAttack
+signal pressButtonIndicator
+signal setParticleEffects
 signal shakeScreen
 signal tailBombDrop
 signal transitionToRoom
+
 
 
 

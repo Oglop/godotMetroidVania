@@ -77,5 +77,12 @@ func setMonsterType(_type, position):
 	self.global_position = position
 	self.type = _type
 	_setMonsterStats()
-	
 
+func _on_Area2D_body_entered(body):
+	if "" in body.name:
+		pass
+	elif "" in body.name:
+		pass
+	
+	
+	
