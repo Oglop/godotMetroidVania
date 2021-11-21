@@ -70,10 +70,10 @@ var data = {
 		"y":0
 	},
 	"tail1": {
-		"type": Global.TAIL_TYPE.THIEF
+		"type": Global.TAIL_TYPE.NONE
 	},
 	"tail2": {
-		"type": Global.TAIL_TYPE.WIZARD
+		"type": Global.TAIL_TYPE.NONE
 	},
 	"tail3": {
 		"type": Global.TAIL_TYPE.NONE

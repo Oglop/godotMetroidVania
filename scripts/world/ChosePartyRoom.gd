@@ -323,7 +323,7 @@ func _ready():
 	self._delayAction(initialDelay)
 	
 func _transferToWorld():
-	Events.emit_signal("transitionToRoom", "PREVIOUS_ROOM", 0, 0)
+	Events.emit_signal("transitionToRoom",  Global.PREVIOUS_ROOM, 0, 0)
 
 func _physics_process(delta):
 	if state != ROOM_STATES.ROOM_ENTERED && state != ROOM_STATES.SELECTED_NO && state != ROOM_STATES.SELECTED_YES && state != ROOM_STATES.SELECTED_FIRST_OPTION && state != ROOM_STATES.SELECTED_SECOND_OPTION && state != ROOM_STATES.SELECTED_THIRD_OPTION && state != ROOM_STATES.LEAVING_ROOM:
@@ -335,7 +335,7 @@ func _physics_process(delta):
 			if state == ROOM_STATES.CHOOSE_CHANGE_OR_EXIT:
 				if selector == 0:
 					#go back to world
-					state = ROOM_STATES.SELECTED_NO
+					state = ROOM_STATES.LEAVING_ROOM
 					self._delayAction(selectedDelay)
 					Events.emit_signal("pressButtonIndicator", false)
 				elif selector == 1:

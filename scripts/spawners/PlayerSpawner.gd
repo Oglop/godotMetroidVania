@@ -13,9 +13,15 @@ func setStartPosition():
 	if Global.CURRENT_ROOM == Global.ROOMS.PLAINS_START && Global.PREVIOUS_ROOM == Global.ROOMS.NONE:
 		startX = -48
 		startY = 272
-	if Global.CURRENT_ROOM == Global.ROOMS.TEST_ROOM_1 && Global.PREVIOUS_ROOM == Global.ROOMS.PLAINS_START:
-		startX = 500
-		startY = 0
+	if Global.CURRENT_ROOM == Global.ROOMS.PLAINS_START && Global.PREVIOUS_ROOM == Global.ROOMS.PLAINS_VILLAGE_WEST:
+		startX = 808
+		startY = 192
+	if Global.CURRENT_ROOM == Global.ROOMS.PLAINS_VILLAGE_WEST && Global.PREVIOUS_ROOM == Global.ROOMS.PLAINS_START:
+		startX = 72
+		startY = 224
+	if Global.CURRENT_ROOM == Global.ROOMS.PLAINS_VILLAGE_WEST && Global.PREVIOUS_ROOM == Global.ROOMS.GUILD:
+		startX = 328
+		startY = 192
 
 func _ready():
 	
