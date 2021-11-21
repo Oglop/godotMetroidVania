@@ -1,10 +1,12 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/world/ChosePartyRoom.gd" type="Script" id=1]
 [ext_resource path="res://scenes/components/NPCRoomTileMap.tscn" type="PackedScene" id=2]
 [ext_resource path="res://fonts/16bfZX.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/components/ButtonPressIndicator.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/npcRooms.png" type="Texture" id=5]
+[ext_resource path="res://scenes/components/NPCRoomMember.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/components/NPCRoomPlayerSprite.tscn" type="PackedScene" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
@@ -18,36 +20,6 @@ animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 48, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 16, 16, 16 )
-
-[sub_resource type="SpriteFrames" id=7]
-animations = [ {
-"frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "tier2",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "tier3",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ) ],
-"loop": true,
-"name": "tier1",
 "speed": 5.0
 } ]
 
@@ -221,15 +193,9 @@ position = Vector2( 27, 102 )
 scale = Vector2( 1, 0.8125 )
 frames = SubResource( 3 )
 
-[node name="PlayerSprite" type="AnimatedSprite" parent="CanvasLayer"]
-position = Vector2( 232, 144 )
-frames = SubResource( 7 )
-animation = "tier3"
+[node name="PlayerSprite" parent="CanvasLayer" instance=ExtResource( 7 )]
 
-[node name="Member1Sprite" type="AnimatedSprite" parent="CanvasLayer"]
-position = Vector2( 248, 144 )
-frames = SubResource( 14 )
-animation = "wizard"
+[node name="Member1Sprite" parent="CanvasLayer" instance=ExtResource( 6 )]
 
 [node name="Member2Sprite" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 264, 144 )

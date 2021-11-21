@@ -1,0 +1,152 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scripts/world/SaveProgressRoom.gd" type="Script" id=1]
+[ext_resource path="res://fonts/16bfZX.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://images/npcRooms.png" type="Texture" id=3]
+[ext_resource path="res://scenes/components/NPCRoomTileMap.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/components/ButtonPressIndicator.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/components/NPCRoomPlayerSprite.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/components/NPCRoomMember.tscn" type="PackedScene" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 48, 8, 8 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[node name="SaveProgressRoom" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Canvas" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Canvas"]
+margin_right = 320.0
+margin_bottom = 240.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NPCRoomButtonIndicator" parent="Canvas" instance=ExtResource( 5 )]
+position = Vector2( 184, 208 )
+frame = 1
+
+[node name="SelectorSprite" type="AnimatedSprite" parent="Canvas"]
+position = Vector2( 26, 103 )
+frames = SubResource( 2 )
+
+[node name="lblTitle" type="Label" parent="Canvas"]
+margin_left = 20.0
+margin_top = 30.0
+margin_right = 297.0
+margin_bottom = 44.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblDescription" type="Label" parent="Canvas"]
+margin_left = 20.0
+margin_top = 61.0
+margin_right = 193.0
+margin_bottom = 88.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblOption1" type="Label" parent="Canvas"]
+margin_left = 32.0
+margin_top = 96.0
+margin_right = 192.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 3 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblOption2" type="Label" parent="Canvas"]
+margin_left = 32.0
+margin_top = 112.0
+margin_right = 192.0
+margin_bottom = 126.0
+custom_fonts/font = SubResource( 3 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblOption3" type="Label" parent="Canvas"]
+margin_left = 32.0
+margin_top = 128.0
+margin_right = 192.0
+margin_bottom = 142.0
+custom_fonts/font = SubResource( 3 )
+text = "a"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblSaveSlot1" type="Label" parent="Canvas"]
+margin_left = 32.0
+margin_top = 160.0
+margin_right = 192.0
+margin_bottom = 174.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblSaveSlot2" type="Label" parent="Canvas"]
+margin_left = 32.0
+margin_top = 176.0
+margin_right = 192.0
+margin_bottom = 190.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="lblSaveSlot3" type="Label" parent="Canvas"]
+margin_left = 32.0
+margin_top = 192.0
+margin_right = 192.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="NPCRoomTileMap" parent="Canvas" instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 65537, 0, 0, 65538, 1, 0, 65539, 1, 0, 65540, 1, 0, 65541, 1, 0, 65542, 1, 0, 65543, 1, 0, 65544, 1, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 2, 0, 131073, 7, 0, 131074, 6, 0, 131075, 6, 0, 131076, 6, 0, 131077, 6, 0, 131078, 6, 0, 131079, 6, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 6, 0, 131087, 6, 0, 131088, 6, 0, 131089, 6, 0, 131090, 8, 0, 196609, 0, 0, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 9, 0, 196621, 0, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 1, 0, 196626, 2, 0, 262145, 3, 0, 262156, 10, 0, 262157, 3, 0, 262162, 5, 0, 327681, 3, 0, 327692, 10, 0, 327693, 3, 0, 327698, 5, 0, 393217, 3, 0, 393228, 10, 0, 393229, 3, 0, 393234, 5, 0, 458753, 3, 0, 458764, 10, 0, 458765, 3, 0, 458770, 5, 0, 524289, 3, 0, 524300, 10, 0, 524301, 3, 0, 524306, 5, 0, 589825, 3, 0, 589836, 10, 0, 589837, 7, 0, 589838, 6, 0, 589839, 6, 0, 589840, 6, 0, 589841, 6, 0, 589842, 8, 0, 655361, 3, 0, 655372, 10, 0, 720897, 3, 0, 720908, 10, 0, 786433, 3, 0, 786444, 10, 0, 851969, 7, 0, 851970, 6, 0, 851971, 6, 0, 851972, 6, 0, 851973, 6, 0, 851974, 6, 0, 851975, 6, 0, 851976, 6, 0, 851977, 6, 0, 851978, 6, 0, 851979, 6, 0, 851980, 11, 0 )
+
+[node name="PlayerSprite" parent="Canvas" instance=ExtResource( 6 )]
+
+[node name="Member1Sprite" parent="Canvas" instance=ExtResource( 7 )]
+
+[node name="Member2Sprite" parent="Canvas" instance=ExtResource( 7 )]
+position = Vector2( 264, 144 )
+
+[node name="Member3Sprite" parent="Canvas" instance=ExtResource( 7 )]
+position = Vector2( 280, 144 )
+
+[node name="Delay" type="Timer" parent="."]
+one_shot = true

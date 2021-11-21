@@ -16,6 +16,8 @@ var legend_EN = {
 	"lblDescription_select_party_member": "Select party member",
 	"lblDescription_accept_new_party_prompt": "Keep the current party",
 	"lblDescription_confirm_party":"",
+	"lblDescription_save_game_prompt":"Save your progress?",
+	"lblDescription_welcome":"Welcome traveler",
 	"lblOption_unavailable":"Included",
 	"lblOption_pooch_name": "Pooch",
 	"lblOption_thief_name": "Kaz",
