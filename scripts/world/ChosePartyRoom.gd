@@ -107,7 +107,7 @@ func _updateInterface() -> void:
 		$CanvasLayer/Selector.hide()
 		_viewPartyFromData()
 	if state == ROOM_STATES.CHOOSE_CHANGE_OR_EXIT:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_chose_new_members")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_no")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_yes")
@@ -118,7 +118,7 @@ func _updateInterface() -> void:
 		$CanvasLayer/Selector.show()
 		_viewPartyFromData()
 	if state == ROOM_STATES.SELECTED_NO:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_leaving")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_no")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_empty")
@@ -129,7 +129,7 @@ func _updateInterface() -> void:
 		$CanvasLayer/Selector.hide()
 		_viewPartyFromData()
 	if state == ROOM_STATES.SELECTED_YES:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lbl_empty")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_empty")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_yes")
@@ -143,7 +143,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(99)
 		$CanvasLayer/Selector.hide()
 	if state == ROOM_STATES.CHOOSE_FIRST_MEMBER:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_select_party_member")
 		$CanvasLayer/lblOption1.text = _getFreeMember(0)
 		$CanvasLayer/lblOption2.text = _getFreeMember(1)
@@ -157,7 +157,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(0)
 		$CanvasLayer/Selector.show()
 	if state == ROOM_STATES.SELECTED_FIRST_OPTION:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_select_party_member")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_empty")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_empty")
@@ -171,7 +171,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(99)
 		$CanvasLayer/Selector.hide()
 	if state == ROOM_STATES.CHOOSE_SECOND_MEMBER:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_select_party_member")
 		$CanvasLayer/lblOption1.text = _getFreeMember(0)
 		$CanvasLayer/lblOption2.text = _getFreeMember(1)
@@ -185,7 +185,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(1)
 		$CanvasLayer/Selector.show()
 	if state == ROOM_STATES.SELECTED_SECOND_OPTION:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_select_party_member")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_empty")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_empty")
@@ -199,7 +199,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(99)
 		$CanvasLayer/Selector.hide()
 	if state == ROOM_STATES.CHOOSE_THIRD_MEMBER:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_select_party_member")
 		$CanvasLayer/lblOption1.text = _getFreeMember(0)
 		$CanvasLayer/lblOption2.text = _getFreeMember(1)
@@ -213,7 +213,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(2)
 		$CanvasLayer/Selector.show()
 	if state == ROOM_STATES.SELECTED_THIRD_OPTION:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lbl_empty")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_empty")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_empty")
@@ -227,7 +227,7 @@ func _updateInterface() -> void:
 		_viewPartyFromSelection(99)
 		$CanvasLayer/Selector.hide()
 	if state == ROOM_STATES.CHOOSE_PROMPT_ACCEPT_PARTY:
-		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_Inn")
+		$CanvasLayer/lblHeader.text = LanguageHandler.getText("lblHeader_guild")
 		$CanvasLayer/lblDescription.text = LanguageHandler.getText("lblDescription_accept_new_party_prompt")
 		$CanvasLayer/lblOption1.text = LanguageHandler.getText("lbl_yes")
 		$CanvasLayer/lblOption2.text = LanguageHandler.getText("lbl_no")
@@ -255,7 +255,7 @@ func _getAnimationNameFromType(type : int) -> String:
 	elif type == Global.TAIL_TYPE.WIZARD:
 		return "wizard"
 	return ""
-	
+
 func _viewPlayer() -> void:
 	if Global.saveGameData.weapon.tier3.equiped == true && Global.saveGameData.armor.tier3.equiped == true && Global.saveGameData.shield.tier3.equiped == true:
 		$CanvasLayer/PlayerSprite.play("tier3")

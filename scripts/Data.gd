@@ -58,6 +58,7 @@ var tailData = {
 }
 
 var data = {
+	"lastSave": "",
 	"language":"en",
 	"lv":1,
 	"currentHP":0,

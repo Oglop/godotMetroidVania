@@ -24,6 +24,10 @@ func _on_goToRoom(goTo, x, y):
 		if x > 56 && x < 88 && y > 216 && y < 248:
 			Global.CURRENT_ROOM = Global.ROOMS.PLAINS_START
 			_setSceneToTree()
+		# INN
+		if x > 552 && x < 584 && y > 184 && y < 216:
+			Global.CURRENT_ROOM = Global.ROOMS.INN
+			_setSceneToTree()
 
 func _setSceneToTree() -> void:
 	if Global.CURRENT_ROOM == Global.ROOMS.TEST_ROOM_1:
@@ -34,3 +38,5 @@ func _setSceneToTree() -> void:
 		get_tree().change_scene("res://scenes/world/PlainsVillageWestRoom.tscn")
 	if Global.CURRENT_ROOM == Global.ROOMS.GUILD:
 		get_tree().change_scene("res://scenes/world/ChosePartyRoom.tscn")
+	if Global.CURRENT_ROOM == Global.ROOMS.INN:
+		get_tree().change_scene("res://scenes/world/SaveProgressRoom.tscn")

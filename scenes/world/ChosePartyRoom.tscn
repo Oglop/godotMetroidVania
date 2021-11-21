@@ -187,6 +187,7 @@ __meta__ = {
 
 [node name="NPCRoomButtonIndicator" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 188.504, 213.505 )
+frame = 1
 
 [node name="Selector" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 27, 102 )

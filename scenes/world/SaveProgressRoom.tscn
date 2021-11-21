@@ -38,10 +38,9 @@ __meta__ = {
 
 [node name="NPCRoomButtonIndicator" parent="Canvas" instance=ExtResource( 5 )]
 position = Vector2( 184, 208 )
-frame = 1
 
 [node name="SelectorSprite" type="AnimatedSprite" parent="Canvas"]
-position = Vector2( 26, 103 )
+position = Vector2( 26, 102 )
 frames = SubResource( 2 )
 
 [node name="lblTitle" type="Label" parent="Canvas"]
@@ -150,3 +149,5 @@ position = Vector2( 280, 144 )
 
 [node name="Delay" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="Delay" to="." method="_on_Delay_timeout"]
