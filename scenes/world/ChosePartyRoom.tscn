@@ -9,102 +9,102 @@
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 3 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 5 )
 region = Rect2( 32, 48, 8, 8 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ SubResource( 4 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 5 )
-region = Rect2( 64, 16, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 5 )
 region = Rect2( 64, 48, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 16, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "tier1",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "tier2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 7 ) ],
+"frames": [ SubResource( 5 ) ],
 "loop": true,
 "name": "tier3",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "tier1",
+"speed": 5.0
 } ]
 
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 5 )
-region = Rect2( 96, 32, 16, 16 )
-
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
 region = Rect2( 96, 16, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
 region = Rect2( 80, 32, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
 region = Rect2( 80, 48, 16, 16 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
 region = Rect2( 80, 16, 16, 16 )
 
-[sub_resource type="SpriteFrames" id=15]
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 32, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ SubResource( 9 ) ],
-"loop": true,
-"name": "dwarf",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 10 ) ],
+"frames": [ SubResource( 8 ) ],
 "loop": true,
 "name": "cleric",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 11 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "thief",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 12 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
 "name": "elf",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "pooch",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ) ],
+"frames": [ SubResource( 12 ) ],
 "loop": true,
 "name": "wizard",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ) ],
+"loop": true,
+"name": "dwarf",
 "speed": 5.0
 } ]
 
@@ -171,9 +171,9 @@ __meta__ = {
 
 [node name="lblOption3" type="Label" parent="CanvasLayer"]
 margin_left = 32.0
-margin_top = 144.0
+margin_top = 128.0
 margin_right = 192.0
-margin_bottom = 156.0
+margin_bottom = 140.0
 custom_fonts/font = SubResource( 1 )
 text = "a"
 __meta__ = {
@@ -182,9 +182,9 @@ __meta__ = {
 
 [node name="lblOption4" type="Label" parent="CanvasLayer"]
 margin_left = 32.0
-margin_top = 160.0
+margin_top = 144.0
 margin_right = 192.0
-margin_bottom = 171.0
+margin_bottom = 155.0
 custom_fonts/font = SubResource( 1 )
 text = "a"
 __meta__ = {
@@ -193,9 +193,9 @@ __meta__ = {
 
 [node name="lblOption5" type="Label" parent="CanvasLayer"]
 margin_left = 32.0
-margin_top = 128.0
+margin_top = 160.0
 margin_right = 192.0
-margin_bottom = 139.0
+margin_bottom = 171.0
 custom_fonts/font = SubResource( 1 )
 text = "a"
 __meta__ = {
@@ -215,6 +215,7 @@ __meta__ = {
 
 [node name="NPCRoomButtonIndicator" parent="CanvasLayer" instance=ExtResource( 4 )]
 position = Vector2( 188.504, 213.505 )
+frame = 1
 
 [node name="Selector" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 27, 102 )
@@ -223,22 +224,22 @@ frames = SubResource( 3 )
 
 [node name="PlayerSprite" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 232, 144 )
-frames = SubResource( 8 )
+frames = SubResource( 7 )
 animation = "tier3"
 
 [node name="Member1Sprite" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 248, 144 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 animation = "wizard"
 
 [node name="Member2Sprite" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 264, 144 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 animation = "wizard"
 
 [node name="Member3Sprite" type="AnimatedSprite" parent="CanvasLayer"]
 position = Vector2( 280, 144 )
-frames = SubResource( 15 )
+frames = SubResource( 14 )
 animation = "wizard"
 
 [node name="Delay" type="Timer" parent="."]

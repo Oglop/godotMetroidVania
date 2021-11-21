@@ -14,6 +14,7 @@ var legend_EN = {
 	"lblDescription_chose_new_members": "Choose new party members?",
 	"lblDescription_leaving": "Thank you, see you soon",
 	"lblDescription_select_party_member": "Select party member",
+	"lblDescription_accept_new_party_prompt": "Keep the current party",
 	"lblDescription_confirm_party":"",
 	"lblOption_unavailable":"Included",
 	"lblOption_pooch_name": "Pooch",
