@@ -13,7 +13,7 @@ var state = STATES.WAITING
 func _ready():
 	Events.connect("monsterWasKilled", self, "_on_MonsterWasKilled")
 	$MonsterSpawnerSprite.hide()
-	_resetTimer()
+	_resetTimer(0.1, 1.0)
 	
 func _resetTimer(minTime = 10.0, maxTime = 30.0):
 	var randomTime = rng.randf_range(minTime, maxTime)
@@ -51,7 +51,7 @@ func _on_MonsterSpawnerTimer_timeout():
 	if state == STATES.WAITING:
 		if _canSpawnNewMonster():
 			state = STATES.SPAWNING
-			_resetTimer(10.0, 10.0)
+			_resetTimer(2.0, 6.0)
 	elif state == STATES.SPAWNING:
 		var newMonster = Monster.instance()
 		self.add_child(newMonster)

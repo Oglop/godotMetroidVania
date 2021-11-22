@@ -13,7 +13,8 @@ var speed: int = 0
 var defence: int = 0
 var xp: int = 0
 var flipped: bool = false
-
+var flipBlocked: bool = false
+var flipDelay: float = 0.2
 
 func _applyDamage(damage):
 	var calculatedDamage = damage - defence
@@ -57,7 +58,8 @@ func _setMonsterStats() -> void:
 func _ready():
 	var rng = RandomNumberGenerator.new()
 	var i = rng.randi_range(0,1)
-	if i == 0:
+	print(i)
+	if i == 1:
 		flipped = false
 	else:
 		flipped = true
@@ -69,20 +71,33 @@ func _checkHP() -> void:
 		self.queue_free()
 
 func _physics_process(delta):
+	velocity.x = -speed if flipped else speed
 	velocity.y += Global.GRAVITY
 	velocity = $MonsterBody.move_and_slide(velocity, Vector2.UP)
+	if flipped:
+		$MonsterBody/RayCasterFloor.position.x = -$MonsterBody/MonsterHitBox.shape.get_extents().x
+	else:
+		$MonsterBody/RayCasterFloor.position.x = $MonsterBody/MonsterHitBox.shape.get_extents().x
 	_setAnimationByTypeAndState()
+	if ($MonsterBody.is_on_wall() || !$MonsterBody/RayCasterFloor.is_colliding()) && !flipBlocked:
+		flipped = false if flipped else true
+		flipBlocked = true
+		_setFlipDelay()
 
 func setMonsterType(_type, position):
 	self.global_position = position
 	self.type = _type
 	_setMonsterStats()
 
+func _setFlipDelay() -> void:
+	$FlipDelay.wait_time = flipDelay
+	$FlipDelay.start()
+
 func _on_Area2D_body_entered(body):
 	if "" in body.name:
 		pass
 	elif "" in body.name:
 		pass
-	
-	
-	
+
+func _on_FlipDelay_timeout():
+	flipBlocked = false

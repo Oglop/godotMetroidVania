@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=44 format=2]
 
 [ext_resource path="res://images/world.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Inventory.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scripts/world/World.gd" type="Script" id=5]
 [ext_resource path="res://scenes/player/TailEffectSpawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/world/Door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/world/MonsterSpawner.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1002,3 +1003,9 @@ pause_mode = 2
 layer = 99
 
 [node name="Inventory" parent="PauseLayer" instance=ExtResource( 2 )]
+
+[node name="MonsterSpawner" parent="." instance=ExtResource( 8 )]
+position = Vector2( 280, 272 )
+
+[node name="MonsterSpawner" parent="MonsterSpawner" instance=ExtResource( 8 )]
+position = Vector2( 112, -48 )

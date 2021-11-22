@@ -18,7 +18,15 @@ var monsters = {
 		"title": "Bug",
 		"hp": 12,
 		"speed": 50,
-		"defence": 2
+		"defence": 2,
+		"xp": 10
+	},
+	"scorpion": {
+		"title": "Scorpion",
+		"hp": 14,
+		"speed": 150,
+		"defence": 1,
+		"xp": 10
 	}
 }
 
