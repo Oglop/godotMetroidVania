@@ -83,6 +83,11 @@ func _physics_process(delta):
 		flipped = false if flipped else true
 		flipBlocked = true
 		_setFlipDelay()
+		
+	for index in $MonsterBody.get_slide_count():
+		var collision = $MonsterBody.get_slide_collision(index)
+		if collision.collider.is_in_group("player"):
+			print("collided with player")
 
 func setMonsterType(_type, position):
 	self.global_position = position
@@ -94,6 +99,7 @@ func _setFlipDelay() -> void:
 	$FlipDelay.start()
 
 func _on_Area2D_body_entered(body):
+	print("_on_Area2D_body_entered(body) " + body.name)
 	if "" in body.name:
 		pass
 	elif "" in body.name:
@@ -101,3 +107,11 @@ func _on_Area2D_body_entered(body):
 
 func _on_FlipDelay_timeout():
 	flipBlocked = false
+
+
+func _on_Area2D_area_entered(area):
+	print("_on_Area2D_area_entered(area) " + area.name)
+	if "" in area.name:
+		pass
+	elif "" in area.name:
+		pass
