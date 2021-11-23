@@ -1,6 +1,7 @@
 extends Node2D
 
 onready var Monster = preload("res://scenes/world/Monster.tscn")
+onready var Damage = preload("res://scenes/effects/DamageText.tscn")
 var rng = RandomNumberGenerator.new()
 enum STATES {
 	WAITING,
@@ -12,6 +13,7 @@ var state = STATES.WAITING
 
 func _ready():
 	Events.connect("monsterWasKilled", self, "_on_MonsterWasKilled")
+	Events.connect("damageAppliedAt", self, "_on_damageAppliedAt")
 	$MonsterSpawnerSprite.hide()
 	_resetTimer(0.1, 1.0)
 	
@@ -60,4 +62,10 @@ func _on_MonsterSpawnerTimer_timeout():
 		
 		state = STATES.WAITING
 		_resetTimer()
+		
+func _on_damageAppliedAt(globalx: float, globaly :float, value: int, isDamage: bool) -> void:
+	var dmg = Damage.instance()
+	self.add_child(dmg)
+	dmg.setValues(globalx, globaly, value, isDamage)
+	
 		

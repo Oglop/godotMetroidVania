@@ -40,13 +40,12 @@ func _physics_process(delta):
 			velocity.x = Data.tailData.weapons.swordAttackTier3.speed
 		else:
 			velocity.x = -Data.tailData.weapons.swordAttackTier3.speed
-	
 	self.move_and_slide(velocity, Vector2.UP)
 
 func setValues(_position: Vector2, _isFlipped: bool) -> void:
 	self.global_position = _position
 	self.flipped = _isFlipped
 
-
-func _on_Area2D_body_entered(body):
-	pass # Replace with function body.
+func _on_SwordAttackArea2D_area_entered(area):
+	print("_on_SwordAttackArea2D_area_entered " + area.name)
+	self.queue_free()

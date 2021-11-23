@@ -8,108 +8,108 @@ extents = Vector2( 5.88068, 5.71015 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 64, 16, 16 )
+region = Rect2( 0, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 64, 16, 16 )
+region = Rect2( 16, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 48, 16, 16 )
+region = Rect2( 0, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 48, 16, 16 )
+region = Rect2( 16, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 16, 16, 16 )
+region = Rect2( 32, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 16, 16, 16 )
+region = Rect2( 48, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 16, 16, 16 )
+region = Rect2( 0, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 16, 16, 16 )
+region = Rect2( 16, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 48, 16, 16 )
+region = Rect2( 32, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 48, 16, 16 )
+region = Rect2( 48, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
-region = Rect2( 0, 32, 16, 16 )
+region = Rect2( 0, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
-region = Rect2( 16, 32, 16, 16 )
+region = Rect2( 16, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 32, 16, 16 )
+region = Rect2( 32, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 32, 16, 16 )
+region = Rect2( 48, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 2 )
-region = Rect2( 32, 64, 16, 16 )
+region = Rect2( 32, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 2 )
-region = Rect2( 48, 64, 16, 16 )
+region = Rect2( 48, 48, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=18]
 animations = [ {
 "frames": [ SubResource( 2 ), SubResource( 3 ) ],
 "loop": true,
-"name": "bug",
+"name": "scorpion",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
-"name": "scorpion",
+"name": "bug",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "blob",
-"speed": 5.0
+"name": "bugHit",
+"speed": 10.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
-"name": "blobHit",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "scorpionHit",
-"speed": 10.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
 "name": "squid",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "squidHit",
 "speed": 10.0
 }, {
+"frames": [ SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "blob",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "blobHit",
+"speed": 10.0
+}, {
 "frames": [ SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
-"name": "bugHit",
+"name": "scorpionHit",
 "speed": 10.0
 } ]
 
@@ -156,5 +156,4 @@ shape = SubResource( 19 )
 [node name="FlipDelay" type="Timer" parent="."]
 
 [connection signal="area_entered" from="MonsterBody/Area2D" to="." method="_on_Area2D_area_entered"]
-[connection signal="body_entered" from="MonsterBody/Area2D" to="." method="_on_Area2D_body_entered"]
 [connection signal="timeout" from="FlipDelay" to="." method="_on_FlipDelay_timeout"]

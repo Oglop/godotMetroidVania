@@ -98,20 +98,22 @@ func _setFlipDelay() -> void:
 	$FlipDelay.wait_time = flipDelay
 	$FlipDelay.start()
 
-func _on_Area2D_body_entered(body):
-	print("_on_Area2D_body_entered(body) " + body.name)
-	if "" in body.name:
-		pass
-	elif "" in body.name:
-		pass
-
 func _on_FlipDelay_timeout():
 	flipBlocked = false
 
 
-func _on_Area2D_area_entered(area):
+func _doDamage(dmg: int) -> void:
+	dmg = dmg - defence
+	if dmg >= 0:
+		Events.emit_signal("damageAppliedAt", $MonsterBody.global_position.x, $MonsterBody.global_position.y, dmg, true)
+	
+
+func _on_Area2D_area_entered(area) -> void:
+	var dmg: int = -1
 	print("_on_Area2D_area_entered(area) " + area.name)
-	if "" in area.name:
-		pass
+	if "SwordAttackArea2D" in area.name:
+		if Global.saveGameData.weapon.tier1.equiped:
+			_doDamage(Data.tailData.weapons.swordAttackTier1.damage)
+	
 	elif "" in area.name:
 		pass
